@@ -1,19 +1,19 @@
 [
   {
     "path": "posts/welcome/",
-    "title": "Welcome to My Blog",
+    "title": "My First Post",
     "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
     "author": [
       {
-        "name": "Nora Jones",
+        "name": "James Carzon",
         "url": "https://example.com/norajones"
       }
     ],
     "date": "2021-06-18",
     "categories": [],
-    "contents": "\r\n\r\n\r\n\r\n",
+    "contents": "\r\nInclude text of post here. This is plain text.\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-06-18T13:43:23-04:00",
-    "input_file": {}
+    "last_modified": "2021-06-18T14:31:16-04:00",
+    "input_file": "welcome.knit.md"
   }
 ]
