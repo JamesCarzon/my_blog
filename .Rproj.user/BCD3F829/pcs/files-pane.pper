@@ -1,0 +1,9 @@
+{
+    "path" : "~/R/my_blog",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
