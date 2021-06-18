@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1069005932",
+    "hash" : "3037402160",
     "id" : "B2CD6EB2",
-    "lastKnownWriteTime" : 1624038200,
-    "last_content_update" : 1624038200,
+    "lastKnownWriteTime" : 1624043224,
+    "last_content_update" : 1624043224951,
     "path" : "~/R/my_blog/_site.yml",
     "project_path" : "_site.yml",
     "properties" : {
+        "cursorPosition" : "1,28",
+        "scrollLine" : "0"
     },
     "read_only" : false,
     "read_only_alternatives" : [

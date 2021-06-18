@@ -1,22 +1,5 @@
 [
   {
-    "path": "posts/welcome/",
-    "title": "My First Post",
-    "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
-    "author": [
-      {
-        "name": "James Carzon",
-        "url": "https://example.com/norajones"
-      }
-    ],
-    "date": "2021-06-18",
-    "categories": [],
-    "contents": "\r\nInclude text of post here. This is plain text.\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2021-06-18T14:31:16-04:00",
-    "input_file": "welcome.knit.md"
-  },
-  {
     "path": "posts/06_18_21_second/",
     "title": "My Second Post",
     "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
@@ -31,6 +14,23 @@
     "contents": "\r\nInclude text of post here. This is plain text. Continue to write.\r\n\r\n\r\n\r\n",
     "preview": {},
     "last_modified": "2021-06-18T14:35:21-04:00",
-    "input_file": "second.knit.md"
+    "input_file": {}
+  },
+  {
+    "path": "posts/welcome/",
+    "title": "My First Post",
+    "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
+    "author": [
+      {
+        "name": "James Carzon",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2021-06-18",
+    "categories": [],
+    "contents": "\r\nInclude text of post here. This is plain text.\r\nMy first level header\r\nMore text.\r\nSecond level header\r\nBullets: 1. First bullet 2. Second bullet\r\nLinks like https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site.\r\nCitations\r\nLinks like Google.\r\nCite a paper like (Hao et al. 2019).\r\nPictures\r\n\r\n\r\n\r\n\r\n\r\n\r\nHao, Jing, Han Huang, Galyna Livshyts, and Konstantin Tikhomirov. 2019. “Distribution of the Minimal Distance of Random Linear Codes,” December. http://arxiv.org/abs/1912.12833.\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/welcome/img/Up a Pawn.png",
+    "last_modified": "2021-06-18T15:07:13-04:00",
+    "input_file": "welcome.knit.md"
   }
 ]

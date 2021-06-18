@@ -9,6 +9,7 @@ author:
     affiliation: Spacely Sprockets
     affiliation_url: https://example.com/spacelysprokets
 date: 06-18-2021
+bibliography: export.bib
 output:
   distill::distill_article:
     self_contained: false
@@ -24,3 +25,26 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Include text of post here. This is plain text.
 
+# My first level header
+
+More text.
+
+## Second level header
+
+Bullets:
+1. First bullet
+2. Second bullet
+
+Links like <https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site>.
+
+## Citations
+
+Links like [Google](https://www.google.com/).
+
+Cite a paper like [@Hao2019].
+
+## Pictures
+
+```{r, fig.align='center'}
+knitr::include_graphics("img/Up a Pawn.png")
+```

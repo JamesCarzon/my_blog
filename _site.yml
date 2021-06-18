@@ -1,5 +1,5 @@
-name: "my_blog"
-title: "My Blog"
+name: "blog"
+title: "James Carzon's Blog"
 description: |
   My Blog
 output_dir: "docs"
