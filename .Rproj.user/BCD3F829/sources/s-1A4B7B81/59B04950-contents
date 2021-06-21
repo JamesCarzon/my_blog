@@ -20,7 +20,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Learn more about creating blogs with Distill at:
 # https://rstudio.github.io/distill/blog.html
+```
 
+```{r, fig.align='center'}
+knitr::include_graphics("img/book_review.png")
 ```
 
 A prudent distinction is to be made between the "rigor" of mathematics and the "fuzziness" of its applications. There is not any real question as to whether arithmetic is "true." It's by logical rules that we all agree to accept as kids that two and two are four, four and four are eight, et cetera. The only way that two and two are not four is if you decide to change the rules, in which case you will be asking a different question. However, of mathematical descriptions of the world, there is almost always some imperfection.

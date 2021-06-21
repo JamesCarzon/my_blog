@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1432693584",
     "id" : "59B04950",
-    "lastKnownWriteTime" : 1624297465,
-    "last_content_update" : 1624297465162,
+    "lastKnownWriteTime" : 1624298600,
+    "last_content_update" : 1624298600747,
     "path" : "~/R/my_blog/_posts/06_18_21_first/first.Rmd",
     "project_path" : "_posts/06_18_21_first/first.Rmd",
     "properties" : {
-        "cursorPosition" : "81,675",
-        "scrollLine" : "78"
+        "cursorPosition" : "24,25",
+        "scrollLine" : "8"
     },
     "read_only" : false,
     "read_only_alternatives" : [

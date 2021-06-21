@@ -3,17 +3,17 @@
     {
       "path": "about.html",
       "title": "About",
-      "description": "On this site, I blog about my various academic interests for a non-academic \naudience. This is opposed to my non-academic interests - about which I blog \nas an anonymous character at <https://nothalfgood.wordpress.com/> - as well \nas my academic interests about which I journal on my homepage at \n<https://jamescarzon.github.io>.",
+      "description": "On this site, I blog about my various academic interests for a non-academic \naudience. This is opposed to my non-academic interests - about which I blog \nas an anonymous character at <https://nothalfgood.wordpress.com> - as well \nas my academic interests about which I journal on my homepage at \n<https://jamescarzon.github.io>.",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-06-21T13:26:06-04:00"
+      "last_modified": "2021-06-21T14:04:05-04:00"
     },
     {
       "path": "index.html",
-      "title": "My Blog",
+      "title": "Posts",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-06-20T22:03:45-04:00"
+      "last_modified": "2021-06-21T14:04:05-04:00"
     }
   ],
   "collections": ["posts/posts.json"]

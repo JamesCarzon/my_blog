@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2890026003",
+    "hash" : "727801808",
     "id" : "3362C433",
-    "lastKnownWriteTime" : 1624241009,
-    "last_content_update" : 1624241009056,
+    "lastKnownWriteTime" : 1624298639,
+    "last_content_update" : 1624298639946,
     "path" : "~/R/my_blog/_posts/06_18_21_second/second.Rmd",
     "project_path" : "_posts/06_18_21_second/second.Rmd",
     "properties" : {
-        "cursorPosition" : "9,16",
+        "cursorPosition" : "9,11",
         "scrollLine" : "0"
     },
     "read_only" : false,
