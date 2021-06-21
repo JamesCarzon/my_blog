@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = FALSE)
 # https://rstudio.github.io/distill/blog.html
 ```
 
-```{r, fig.align='center'}
+```{r eval=FALSE, fig.align='center', include=FALSE}
 knitr::include_graphics("img/book_review.png")
 ```
 
