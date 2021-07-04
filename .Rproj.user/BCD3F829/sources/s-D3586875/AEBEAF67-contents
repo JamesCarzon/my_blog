@@ -8,7 +8,7 @@ author:
     url: https://jamescarzon.github.io/
     affiliation: Carnegie Mellon University
     affiliation_url: http://www.stat.cmu.edu/
-date: 06-21-2021
+date: 07-05-2021
 output:
   distill::distill_article:
     self_contained: false
