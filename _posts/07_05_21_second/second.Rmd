@@ -22,6 +22,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+```{r, fig.align='center'}
+knitr::include_graphics("img/elo_rating.png")
+```
+
 It is imperative that you establish your chess skill level as soon as possible. 
 There is simply too much at stake to live your 21st century life in tactical 
 darkness. If you seriously think 

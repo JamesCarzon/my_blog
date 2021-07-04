@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1625368869290.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2029422404",
+    "id" : "F58C25DD",
+    "lastKnownWriteTime" : 1625368783,
+    "last_content_update" : 1625368783,
+    "path" : "~/R/my_blog/_posts/07_05_21_second/second.Rmd",
+    "project_path" : "_posts/07_05_21_second/second.Rmd",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
