@@ -1,22 +1,25 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1625368869290.000,
+    "created" : 1625401951500.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2029422404",
-    "id" : "F58C25DD",
-    "lastKnownWriteTime" : 1625368783,
-    "last_content_update" : 1625368783,
+    "hash" : "0",
+    "id" : "1B1515E0",
+    "lastKnownWriteTime" : 1626468419,
+    "last_content_update" : 1626468419833,
     "path" : "~/R/my_blog/_posts/07_05_21_second/second.Rmd",
     "project_path" : "_posts/07_05_21_second/second.Rmd",
     "properties" : {
+        "cursorPosition" : "175,62",
+        "last_setup_crc32" : "",
+        "scrollLine" : "161"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 2,
+    "relative_order" : 1,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"
