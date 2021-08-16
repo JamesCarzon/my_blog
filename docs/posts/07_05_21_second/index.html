@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["img/elo_rating.png","second_files/anchor-4.2.2/anchor.min.js","second_files/bowser-1.9.3/bowser.min.js","second_files/distill-2.2.21/template.v2.js","second_files/figure-html5/unnamed-chunk-2-1.png","second_files/jquery-1.11.3/jquery.min.js","second_files/popper-2.6.0/popper.min.js","second_files/tippy-6.2.7/tippy-bundle.umd.min.js","second_files/tippy-6.2.7/tippy-light-border.css","second_files/tippy-6.2.7/tippy.css","second_files/tippy-6.2.7/tippy.umd.min.js","second_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["img/elo_rating.png","img/elo_rating_resize.png","second_files/anchor-4.2.2/anchor.min.js","second_files/bowser-1.9.3/bowser.min.js","second_files/distill-2.2.21/template.v2.js","second_files/figure-html5/unnamed-chunk-2-1.png","second_files/jquery-1.11.3/jquery.min.js","second_files/popper-2.6.0/popper.min.js","second_files/tippy-6.2.7/tippy-bundle.umd.min.js","second_files/tippy-6.2.7/tippy-light-border.css","second_files/tippy-6.2.7/tippy.css","second_files/tippy-6.2.7/tippy.umd.min.js","second_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2096,14 +2096,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="d-article">
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/elo_rating.png" width="644" style="display: block; margin: auto;" /></p>
+<p><img src="img/elo_rating_resize.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <p>It is imperative that you establish your chess skill level as soon as possible. There is simply too much at stake to live your 21st century life in tactical darkness. If you seriously think that you can walk around inside this world with nothing but the minimal knowledge of how the pieces move and still hold your head high at night, then you’ve already lost. Mark my words, you will be the one left sitting on the curb outside Pizza Hut with your confidence shattered and your carpal tunnels throbbing while a confederacy of twelve-year-olds will be standing around you with their hands making knight-jump-shapes on their acne-ridden foreheads. There is no coming back from this disaster.</p>
 <p>As a kid, I did not believe myself to be mathematically competent, and I assumed that good play of chess required some sort of talent for calculation. When I started playing chess in college, I marvelled at my opponents’ good fortune. I thought to myself as I lost time and again, <em>I’d done nothing wrong! I traded pieces for pieces, I didn’t walk into check, and I kept my queen next to my king! How could I have lost?</em></p>
 <p>The circumstances of the COVID-19 pandemic kindled a change in my attitude about the game. I found it to be an opportune activity to share remotely with my friends and a skill in which I was certainly capable of improving. The practice of learning to play better chess (as opposed to the practice itself of playing chess) is very satisfying now, because I no longer embarrass myself and have a renewed admiration for my ability to cling to mediocrity in a broad range of skills in which most people either find great success or total disdain.</p>
 <p>This post is a reflection of my current state in the hobby of online chess. As an educational exercise and for curious readers, I want to document my thought process qualitatively a little. Additionally, in the interest of learning more about how my progress is measured, I investigate the “elo rating.” This investigation I share with you now.</p>
-<iframe src="https://lichess.org/embed/0Hxq5ZmB#35?theme=auto&amp;bg=auto" width="600" height="397" frameborder="0">
-</iframe>
 <h1 id="elo-as-proxy">Elo as proxy</h1>
 <p>It would be convenient to know your genuine world ranking in chess like how you know your height, but you can’t practically determine such a thing. The only way to decide how good people really are is to make everyone play against everyone else infinitely many times and then line up in such a way that no one is standing behind someone against whom they win more than half of the time. But such a tournament is impractical since we would not have anyone to wash our clothes or to clean after the horses on Mackinac Island, and so we will never know how good we really are.</p>
 <p>But it is rather obvious that we may guess how good we are at the game, and to guess with improving certainty with more and more play, without ever actually measuring skill. To have a good guess, let’s just order everyone that you’ve played against according to your win percentage against them. You can stand in front of the people against whom you normally win, but you must stand behind those who beat you. How good is the person standing in front of you? And behind? Average their true rankings to approximate your own.</p>
@@ -2121,9 +2119,22 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><span class="math display">\[Pr(A\text{ beats }B)+Pr(B\text{ beats }A)=100\%=1,\]</span></p>
 <p>so</p>
 <p><span class="math display">\[Pr(B\text{ beats }A)=1-Pr(A\text{ beats }B).\]</span></p>
-<p>Link: <a href="https://chance.amstat.org/2020/09/chess/" class="uri">https://chance.amstat.org/2020/09/chess/</a></p>
+<p>Combining this with the first equation, we solve for <span class="math inline">\(Pr(A\text{ beats }B)\)</span> to obtain</p>
+<p><span class="math display">\[Pr(A\text{ beats }B) = \frac{1}{1+10^{\frac{R_B-R_A}{400}}}.\]</span></p>
+<p>Conveniently, this expression is related to our assumption that one’s chess performance follows a sort of curve like the Gumbel curve. The Gumbel curve is the graph of a function like</p>
+<p><span class="math display">\[f(x) = \frac{1}{\beta}e^{-\left(\frac{x-\mu}{\beta}+e^{\frac{x-\mu}{\beta}}\right)},\]</span></p>
+<p>where the number <span class="math inline">\(\mu\)</span> determines where the curve is centered and the number <span class="math inline">\(\beta\)</span> determines the horizontal scale. Let us take it as a fact now that if two random variables <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> follow Gumbel distributions with the same scale number <span class="math inline">\(\beta\)</span>, then the random variable <span class="math inline">\(B-A\)</span> is a random variable with a logistic distribution, meaning that it has a distribution defined by the function</p>
+<p><span class="math display">\[g(x) = \frac{e^{-\frac{x-\mu*}{\beta}}}{\beta\left(1+e^{-\frac{x-\mu*}{\beta}}\right)^2},\]</span></p>
+<p>where <span class="math inline">\(\mu*\)</span> is the center of the curve showing the distribution of <span class="math inline">\(B-A\)</span>. If we perform a clever calculus calculation, then we can obtain</p>
+<p><span class="math display">\[Pr(B-A\le x) = \int_{-\infty}^{x}f(y)dy = \frac{1}{1+e^{-\frac{x-\mu*}{\beta}}}.\]</span></p>
+<p>This function, this particular probability, is a function which looks similar to our expression for <span class="math inline">\(Pr(A\text{ beats }B)\)</span>.</p>
+<p>Links: <a href="https://chance.amstat.org/2020/09/chess/" class="uri">https://chance.amstat.org/2020/09/chess/</a></p>
+<p><a href="http://www.glicko.net/research/acjpaper.pdf" class="uri">http://www.glicko.net/research/acjpaper.pdf</a></p>
+<p><a href="https://stmorse.github.io/journal/Elo.html" class="uri">https://stmorse.github.io/journal/Elo.html</a></p>
 <h1 id="dont-trot-out-the-queen">Don’t trot out the queen</h1>
-<h1 id="playing-chess-like-you-care">Playing chess like you care</h1>
+<p>Understanding the technical definition of chess rating has not been practically helpful for playing better chess in my experience, but I have learned a few things about how to adjust my play to opponents of different ratings. For example, I recognized early on in my career as an amateur that</p>
+<iframe src="https://lichess.org/embed/0Hxq5ZmB#35?theme=auto&amp;bg=auto" width="600" height="397" frameborder="0">
+</iframe>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

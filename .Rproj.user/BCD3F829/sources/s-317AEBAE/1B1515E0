@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "175775672",
     "id" : "1B1515E0",
-    "lastKnownWriteTime" : 1626468419,
-    "last_content_update" : 1626468419833,
+    "lastKnownWriteTime" : 1629137548,
+    "last_content_update" : 1629137548555,
     "path" : "~/R/my_blog/_posts/07_05_21_second/second.Rmd",
     "project_path" : "_posts/07_05_21_second/second.Rmd",
     "properties" : {
-        "cursorPosition" : "175,62",
+        "cursorPosition" : "26,43",
         "last_setup_crc32" : "",
-        "scrollLine" : "161"
+        "scrollLine" : "6"
     },
     "read_only" : false,
     "read_only_alternatives" : [

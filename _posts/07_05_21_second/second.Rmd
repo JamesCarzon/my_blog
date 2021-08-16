@@ -24,8 +24,8 @@ require(ggplot2)
 require(VGAM)
 ```
 
-```{r, fig.align='center'}
-knitr::include_graphics("img/elo_rating.png")
+```{r, fig.align='center', out.width="100%"}
+knitr::include_graphics("img/elo_rating_resize.png")
 ```
 
 It is imperative that you establish your chess skill level as soon as possible. 
@@ -61,9 +61,6 @@ an educational exercise and for curious readers, I want to document my thought
 process qualitatively a little. Additionally, in the interest of learning more 
 about how my progress is measured, I investigate the "elo rating." This investigation I 
 share with you now.
-
-<iframe src="https://lichess.org/embed/0Hxq5ZmB#35?theme=auto&bg=auto"
-width=600 height=397 frameborder=0></iframe>
 
 # Elo as proxy
 
@@ -175,9 +172,40 @@ obtain
 
 $$Pr(A\text{ beats }B) = \frac{1}{1+10^{\frac{R_B-R_A}{400}}}.$$
 
-Link: https://chance.amstat.org/2020/09/chess/
+Conveniently, this expression is related to our assumption that one's chess 
+performance follows a sort of curve like the Gumbel curve. The Gumbel curve is 
+the graph of a function like 
+
+$$f(x) = \frac{1}{\beta}e^{-\left(\frac{x-\mu}{\beta}+e^{\frac{x-\mu}{\beta}}\right)},$$
+
+where the number $\mu$ determines where the curve is centered and the number 
+$\beta$ determines the horizontal scale. Let us take it as a fact now that if 
+two random variables $A$ and $B$ follow Gumbel distributions with the same 
+scale number $\beta$, then the random variable $B-A$ is a random variable with 
+a logistic distribution, meaning that it has a distribution defined by the 
+function 
+
+$$g(x) = \frac{e^{-\frac{x-\mu*}{\beta}}}{\beta\left(1+e^{-\frac{x-\mu*}{\beta}}\right)^2},$$
+
+where $\mu*$ is the center of the curve showing the distribution of $B-A$. If 
+we perform a clever calculus calculation, then we can obtain 
+
+$$Pr(B-A\le x) = \int_{-\infty}^{x}f(y)dy = \frac{1}{1+e^{-\frac{x-\mu*}{\beta}}}.$$
+
+This function, this particular probability, is a function which looks similar to our expression for $Pr(A\text{ beats }B)$.
+
+Links: https://chance.amstat.org/2020/09/chess/
+
+http://www.glicko.net/research/acjpaper.pdf
+
+https://stmorse.github.io/journal/Elo.html
 
 # Don't trot out the queen
 
-# Playing chess like you care
+Understanding the technical definition of chess rating has not been practically 
+helpful for playing better chess in my experience, but I have learned a few things about how to adjust my play to opponents of different ratings. For example, I recognized early on in my career as an amateur that 
+
+<iframe src="https://lichess.org/embed/0Hxq5ZmB#35?theme=auto&bg=auto"
+width=600 height=397 frameborder=0></iframe>
+
 
