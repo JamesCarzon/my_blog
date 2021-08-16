@@ -83,12 +83,14 @@ you. How good is the person standing in front of you? And behind? Average their
 true rankings to approximate your own.
 
 Of course, this solution is no good since your opponents don't know 
-their true rankings either.
+their true rankings either. Furthermore, it may be the case that two players 
+against whom you consider yourself equally ranked do not consider themselves 
+equally ranked, so this program of ordering everyone may be poorly defined.
 
 In order to make up numbers to represent skill level, the elo rating system 
 depends on the simple premise that a player's true ability is not perfectly 
 represented in any one game. Sometimes they play better than average and other 
-times they play badly. Then, for example, if they are supposedly at rating $X$ 
+times they play worse. Then, for example, if they are supposedly at rating $X$ 
 and they are winning 
 frequently against players of ratings greater than $X$, then this is a sign 
 that their rating is underestimated and should be increased. Usually, a 
@@ -106,8 +108,9 @@ ggplot() +
 
 This curve is of an "extreme value distribution," also known as the Gumbel 
 distribution. That is, it is a curve which shows 
-the theoretical distribution of values of the maximum values of data samples 
-which, in turn, are samples from some other distribution. A classic use case 
+the theoretical *distribution of values* of the *maximum values* of
+*data samples* 
+which, in turn, are samples from some *other distribution*. A classic use case 
 might be the following. Suppose a river runs through your property and you 
 would like to know if the river is likely to rise enough to spill over your 
 garden. You may know how high the river ran every day for the last ten years, 
