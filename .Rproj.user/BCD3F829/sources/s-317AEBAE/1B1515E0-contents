@@ -8,10 +8,11 @@ author:
     url: https://jamescarzon.github.io/
     affiliation: Carnegie Mellon University
     affiliation_url: http://www.stat.cmu.edu/
-date: 07-05-2021
+date: 08-16-2021
 output:
   distill::distill_article:
     self_contained: false
+bibliography: second.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -195,20 +196,88 @@ we perform a clever calculus calculation, then we can obtain
 
 $$Pr(B-A\le x) = \int_{-\infty}^{x}f(y)dy = \frac{1}{1+e^{-\frac{x-\mu*}{\beta}}}.$$
 
-This function, this particular probability, is a function which looks similar to our expression for $Pr(A\text{ beats }B)$.
+This function, this particular probability, is a function which looks similar to 
+our expression for $Pr(A\text{ beats }B)$.
 
-Links: https://chance.amstat.org/2020/09/chess/
+In particular, if $\mu_*=R_A-R_B$ and $\beta=\frac{400}{\log 10}$, then
 
-http://www.glicko.net/research/acjpaper.pdf
+$$P(A\text{ beats }B) = P(B-A\leq 0) = \frac{1}{1+e^{\left[-\frac{R_B-R_A}{\frac{400}{\log 10}}\right]}} = \frac{1}{1+10^{-\frac{R_B-R_A}{400}}}.$$
 
-https://stmorse.github.io/journal/Elo.html
+This calculation is repeated from Arthur Berg's explanation in *Chance* 
+[@Berg2020].
+So it seems that this probability model for chess play is somehow justified by 
+the convenience of this calculation. If we pretend that one's performance 
+follows this Gumbel curve, then we can say that the odds seen in games are 
+structured in the way described concretely above: a $+400$ rating difference 
+translates to expected $10:1$ odds of winning. To conclude, Elo doesn't measure 
+chess ability or ranking, but it is a somewhat 
+sophisticated guess as to one's relative winning odds against another player.
 
 # Don't trot out the queen
 
 Understanding the technical definition of chess rating has not been practically 
-helpful for playing better chess in my experience, but I have learned a few things about how to adjust my play to opponents of different ratings. For example, I recognized early on in my career as an amateur that 
+helpful for playing better chess in my experience, but I have learned a few 
+things about how to adjust my play to opponents of different ratings. For 
+example, I recognized early on in my career as an amateur that low rated 
+players are forever begging to trick someone into falling for the "Scholar's 
+Mate." Something like this is what they have in mind:
+
+```{r, fig.align='center', out.width="100%"}
+knitr::include_graphics("img/scholars_mate.png")
+```
+
+It's a quick and annoying loss for the poor soul who doesn't see it coming. 
+However, in order to achieve this trick, you have to breach a generally true 
+rule: you have to develop our queen piece early. This is typically a bad idea 
+because it is easy for your opponent to simultaneously get their pieces into 
+the center of the board while also attacking your queen. As you run the queen 
+away over and over again, your other pieces don't move and you end up falling 
+behind. For this reason, it's better to move your other pieces out before the 
+queen.
+
+I think that it is at or around the 1000 elo rating in online chess play that 
+everyone is smart enough not to try using the Scholar's Mate as an old, 
+reliable tool. Similar patterns do emerge sometimes. As an example that I may 
+pleasantly share, I submit for your consideration the following game that I 
+played against an opponent by the handle "PunisherFevzican9."
 
 <iframe src="https://lichess.org/embed/0Hxq5ZmB#35?theme=auto&bg=auto"
 width=600 height=397 frameborder=0></iframe>
 
+The initial move 1. ... c5 is the Sicilian Defense. Up to 4. Bc4, this game is 
+a common position, but with 4. ... f6 the database on Lichess.org is exhausted. 
+This pawn push is considered a mistake because it allows me to break into the 
+center, but it was not obvious to either of us in that moment. I just happened 
+to play the best move next.
 
+We trade pieces in the center on d4 until 7. Qxd4. Now my queen is developed 
+and easily be attacked, and so comes 7. ... d5. Unfortunately for my opponent, 
+this gives me the option to attack the vacated f7 square with a bishop-queen 
+battery, almost like how the Scholar's Mate looks, except now my queen can't 
+be dislodged. All the pawns are too far advanced. I play 8. Qd5, eying f7. Then 
+8. ... Qe7 defends that square, so I bring my knight to b5, now getting ready 
+to fork the king and rook or maybe just help in the attack. The black queen now 
+runs around trying to find something dangerous to do but can't figure anything 
+out. With 13. Qxe7+, I trade queens, thinking that I have a strong enough 
+attack without the queens on the board to checkmate soon.
+
+At this point I spend some time looking for a possible checkmate pattern. I saw 
+that the king had two squares to move to: c7 and e8. If I could hold the king 
+in place, then that would make it hard for black to develop the bishop on c8 
+that's stuck behind two pawns and, thus, the rooks stuck inside their own caves.
+
+With 14. Rd1, I enable one more piece to participate. Trading a knight and 
+bishop, black makes some room, but this is a distraction from my own plan. As 
+black plays 16. ... Ne7, the king is once again limited to the squares c7 and 
+e8, and my bishops are perfectly set up to close these off. 17. Bf7 covers e8. 
+Black simply looks at the bishop with 17. ... Rf8. Then 18. Bb6 is mate.
+
+I did not play an excellent game. Many moments of this attack were refutable. 
+For example, if after 17. Bf7 the black king moved to c7, I would have been a 
+bit stuck. However, this was a fast game, played with 5 minutes plus 3 second 
+increments on each move, so my opponent didn't necessarily have a chance to 
+calculate my plan at each turn. The lesson that I learned from this game is 
+that an aggressive attack can work, even against players who are familiar with 
+some tricks, if the attacking plan is specific and coordinated with the right 
+mistakes made by your opponent. So don't just trot out the queen! Let your 
+attacks be sound and games be exciting.
