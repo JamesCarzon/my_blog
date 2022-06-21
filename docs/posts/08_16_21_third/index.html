@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,11 +74,11 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -85,39 +86,40 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
+
   <!--radix_placeholder_meta_tags-->
 <title>James Carzon's Blog: On answering the wrong question</title>
 
-<meta property="description" itemprop="description" content="Some examples of the shortcomings of hypothesis testing."/>
+<meta property="description" itemprop="description" content="Some examples of how statistical hypothesis testing sometimes answers &#10;different questions than we would like to ask."/>
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2021-10-03"/>
-<meta property="article:created" itemprop="dateCreated" content="2021-10-03"/>
+<meta property="article:published" itemprop="datePublished" content="2022-06-21"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-06-21"/>
 <meta name="article:author" content="James Carzon"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="James Carzon&#39;s Blog: On answering the wrong question"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="Some examples of the shortcomings of hypothesis testing."/>
+<meta property="og:description" content="Some examples of how statistical hypothesis testing sometimes answers &#10;different questions than we would like to ask."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="James Carzon&#39;s Blog"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
 <meta property="twitter:title" content="James Carzon&#39;s Blog: On answering the wrong question"/>
-<meta property="twitter:description" content="Some examples of the shortcomings of hypothesis testing."/>
+<meta property="twitter:description" content="Some examples of how statistical hypothesis testing sometimes answers &#10;different questions than we would like to ask."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["On answering the wrong question"]},{"type":"character","attributes":{},"value":["Some examples of the shortcomings of hypothesis testing."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["James Carzon"]},{"type":"character","attributes":{},"value":["https://jamescarzon.github.io/"]},{"type":"character","attributes":{},"value":["Carnegie Mellon University"]},{"type":"character","attributes":{},"value":["http://www.stat.cmu.edu/"]}]}]},{"type":"character","attributes":{},"value":["10-03-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["On answering the wrong question"]},{"type":"character","attributes":{},"value":["Some examples of how statistical hypothesis testing sometimes answers \ndifferent questions than we would like to ask."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["James Carzon"]},{"type":"character","attributes":{},"value":["https://jamescarzon.github.io/"]},{"type":"character","attributes":{},"value":["Carnegie Mellon University"]},{"type":"character","attributes":{},"value":["http://www.stat.cmu.edu/"]}]}]},{"type":"character","attributes":{},"value":["06-21-2022"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["third_files/anchor-4.2.2/anchor.min.js","third_files/bowser-1.9.3/bowser.min.js","third_files/distill-2.2.21/template.v2.js","third_files/figure-html5/unnamed-chunk-2-1.png","third_files/figure-html5/unnamed-chunk-3-1.png","third_files/header-attrs-2.10/header-attrs.js","third_files/jquery-1.11.3/jquery.min.js","third_files/popper-2.6.0/popper.min.js","third_files/tippy-6.2.7/tippy-bundle.umd.min.js","third_files/tippy-6.2.7/tippy-light-border.css","third_files/tippy-6.2.7/tippy.css","third_files/tippy-6.2.7/tippy.umd.min.js","third_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["img/trains_passing.png","img/trains_passing_resize.png","third_files/anchor-4.2.2/anchor.min.js","third_files/bowser-1.9.3/bowser.min.js","third_files/distill-2.2.21/template.v2.js","third_files/figure-html5/endsconfint-1.png","third_files/figure-html5/middleconfint-1.png","third_files/figure-html5/unnamed-chunk-2-1.png","third_files/figure-html5/unnamed-chunk-3-1.png","third_files/header-attrs-2.10/header-attrs.js","third_files/header-attrs-2.14/header-attrs.js","third_files/jquery-1.11.3/jquery.min.js","third_files/jquery-3.6.0/jquery-3.6.0.js","third_files/jquery-3.6.0/jquery-3.6.0.min.js","third_files/jquery-3.6.0/jquery-3.6.0.min.map","third_files/popper-2.6.0/popper.min.js","third_files/tippy-6.2.7/tippy-bundle.umd.min.js","third_files/tippy-6.2.7/tippy-light-border.css","third_files/tippy-6.2.7/tippy.css","third_files/tippy-6.2.7/tippy.umd.min.js","third_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -463,7 +465,7 @@ d-title {
 
 </style>
 
-<script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
 <link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
 <script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1035,10 +1037,6 @@ figure img.external {
   position: relative;
   margin-bottom: 2.5em;
   margin-top: 1.5em;
-}
-
-.figure img {
-  width: 100%;
 }
 
 .figure .caption {
@@ -1870,7 +1868,16 @@ function init_distill() {
 
     // hoverable references
     $('span.citation[data-cites]').each(function() {
-      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+      if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+        var fn = $(this).children()[0]
+        $(this).html(fn.shadowRoot.querySelector("sup"))
+        $(this).id = fn.id
+        fn.remove()
+      }
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        return "<p>" + $('#ref-' + ref).html() + "</p>";
+      }).join("\n");
       window.tippy(this, {
         allowHTML: true,
         content: refHtml,
@@ -1881,6 +1888,31 @@ function init_distill() {
         placement: 'bottom-start'
       });
     });
+
+    // fix footnotes in tables (#411)
+    // replacing broken distill.pub feature
+    $('table d-footnote').each(function() {
+      // we replace internal showAtNode methode which is triggered when hovering a footnote
+      this.hoverBox.showAtNode = function(node) {
+        // ported from https://github.com/distillpub/template/pull/105/files
+        calcOffset = function(elem) {
+            let x = elem.offsetLeft;
+            let y = elem.offsetTop;
+            // Traverse upwards until an `absolute` element is found or `elem`
+            // becomes null.
+            while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                x += elem.offsetLeft;
+                y += elem.offsetTop;
+            }
+
+            return { left: x, top: y };
+        }
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+        const bbox = node.getBoundingClientRect();
+        const offset = calcOffset(node);
+        this.show([offset.left + bbox.width, offset.top + bbox.height]);
+      }
+    })
 
     // clear polling timer
     clearInterval(tid);
@@ -1980,6 +2012,8 @@ function init_common() {
   // mark non-body figures created by knitr chunks as 100% width
   $('.layout-chunk').each(function(i, val) {
     var figures = $(this).find('img, .html-widget');
+    // ignore leaflet img layers (#106)
+    figures = figures.filter(':not(img[class*="leaflet"])')
     if ($(this).attr('data-layout') !== "l-body") {
       figures.css('width', '100%');
     } else {
@@ -2002,7 +2036,7 @@ function init_common() {
   // get rid of index.html references in header
   if (window.location.protocol !== "file:") {
     $('.distill-site-header a[href]').each(function(i,val) {
-      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
     });
   }
 
@@ -2041,8 +2075,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.10/header-attrs.js"></script>
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2062,7 +2096,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"On answering the wrong question","description":"Some examples of the shortcomings of hypothesis testing.","authors":[{"author":"James Carzon","authorURL":"https://jamescarzon.github.io/","affiliation":"Carnegie Mellon University","affiliationURL":"http://www.stat.cmu.edu/","orcidID":""}],"publishedDate":"2021-10-03T00:00:00.000-04:00","citationText":"Carzon, 2021"}
+{"title":"On answering the wrong question","description":"Some examples of how statistical hypothesis testing sometimes answers \ndifferent questions than we would like to ask.","authors":[{"author":"James Carzon","authorURL":"https://jamescarzon.github.io/","affiliation":"Carnegie Mellon University","affiliationURL":"http://www.stat.cmu.edu/","orcidID":""}],"publishedDate":"2022-06-21T00:00:00.000-04:00","citationText":"Carzon, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2088,50 +2122,225 @@ document.addEventListener('DOMContentLoaded', function() {
 <h1>On answering the wrong question</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Some examples of the shortcomings of hypothesis testing.</p></p>
+<p><p>Some examples of how statistical hypothesis testing sometimes answers
+different questions than we would like to ask.</p></p>
 </div>
 
 <div class="d-byline">
   James Carzon <a href="https://jamescarzon.github.io/" class="uri">https://jamescarzon.github.io/</a> (Carnegie Mellon University)<a href="http://www.stat.cmu.edu/" class="uri">http://www.stat.cmu.edu/</a>
   
-<br/>10-03-2021
+<br/>06-21-2022
 </div>
 
 <div class="d-article">
 <div class="layout-chunk" data-layout="l-body">
-
+<p><img src="img/trains_passing_resize.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
-<p>Sometimes we find ourselves answering a different question than we’d been asked. We’ve all been there. One time I’d spent several minutes explaining the overlap in Pittsburgh bus route coverage to a freshman at CMU who had asked me “Where does the Carnegie Museum of Art sit among your favorite coffee shops?” So trust me, I’ve been there (and their cafe’s lattes are middle-of-the-road).</p>
-<p>Another classic example of answering the wrong question is the interpretation of hypothesis tests in statistics. Say for the sake of discussion that I’m an ordinary seismologist who has wandered into your home, and you ask me, “What’s the probability that an earthquake happens in Yellowstone National Park this year?” Bumbling and jabbering under my breath, I help myself to your dusty floor and secure myself against the door so that no one may leave as I respond to your plainly stated question, answering: “Well, you see, within ninety-five percent error bars we can say with asymptotic certainty that that the likelihood of a seismic event in Yellowstone in the next year is predicted to be very unlikely with a confidence level of 0.05 and a <span class="math inline">\(P\)</span>-value of 1.21.” You think to yourself, are all seismologists like this? but you splurt out (rudely), “Hey, wait a minute! I didn’t ask you about the <em>likelihood</em>. I asked you about the <em>probability</em>! And I certainly didn’t need you to conceal your sneaky substitution amongst uninteresting remarks on <span class="math inline">\(P\)</span>-values and confidence levels.” But alas, every scientist knows that a simply stated conclusion is a false one, and so every caveat known to be relevant to any statistical hypothesis ever must be rattled off upon its statement, like possible side effects to a new drug during a Super Bowl spot.</p>
-<p>In this post, let’s ask some of the questions that we’re not allowed to ask in an introductory statistics class, the questions that scientists aren’t allowed to answer straightforwardly because their statistics profs say so. The hypothesis testing process that is so fundamental to the conduct of statistics in the real world - or so they would have you believe<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> - is actually such a rigid concept that the rules may seem unintuitive and the results, uninteresting. It is time now to discuss of these nagging issues.</p>
+<p>Sometimes we find ourselves answering a different question than we’d been
+asked. We’ve all been there. One time I’d spent several minutes explaining the
+overlap in Pittsburgh bus route coverage to a freshman at CMU who had asked me
+“Where does the Carnegie Museum of Art sit among your favorite coffee
+shops?” So trust me, I’ve been there (and their cafe’s lattes are
+middle-of-the-road).</p>
+<p>Another classic example of answering the wrong question is the interpretation
+of hypothesis tests in statistics. Say for the sake of discussion that I’m an
+ordinary seismologist who has wandered into your home, and you ask me, “What’s
+the probability that an earthquake happens in Yellowstone National Park this
+year?” Bumbling and jabbering under my breath, I help myself to your dusty
+floor and secure myself against the door so that no one may leave as I respond
+to your plainly stated question, answering: “Well, you see, within ninety-five percent error bars we can say with asymptotic certainty that that the
+likelihood of a seismic event in Yellowstone in the next year is predicted to
+be very unlikely with a confidence level of 0.05 and a <span class="math inline">\(P\)</span>-value of 1.21.” You
+think to yourself, are all seismologists like this? but you splurt out (rudely),
+“Hey, wait a minute! I didn’t ask you about the <em>likelihood</em>. I asked you
+about the <em>probability</em>! And I certainly didn’t need you to conceal your sneaky
+substitution amongst uninteresting remarks on <span class="math inline">\(P\)</span>-values and confidence
+levels.” But alas, every scientist knows that a simply stated conclusion is a
+false one, and so every caveat known to be relevant to any statistical
+hypothesis ever must be rattled off upon its statement, like possible side
+effects to a new drug during a Super Bowl spot.</p>
+<p>In this post, let’s ask some of the questions that we’re not allowed to ask in
+an introductory statistics class, the questions that scientists aren’t allowed
+to answer straightforwardly because their statistics profs say so. The
+hypothesis testing process that is so
+fundamental to the conduct of statistics in the real world - or so they would
+have you believe<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> -
+is actually such a rigid concept that the
+rules may seem unintuitive and the results, uninteresting. It is time now to
+discuss of these nagging issues.</p>
 <h1 id="a-preference-for-positive-results">A preference for positive results</h1>
-<p>When we first learn how to test hypotheses, we learn to test “simple” hypotheses. Let us start here.</p>
-<p>Recall the hypothesis testing process. A researcher may ask whether it is likely the case that a treatment that they are administering to a portion of their experiment participants is causing a significant difference in their health outcomes. The optimistic researcher would like to see that the people receiving the treatment are turning out better than are the people receiving no treatment, and so they perform a “hypothesis test” with the “null hypothesis” that the treatment effect (call it <span class="math inline">\(\beta\)</span>) is not significant (i.e. <span class="math inline">\(\beta=0\)</span>). If we find that this hypothesis is very unlikely to be true given the data that we collect in the experiment, then we will reject the hypothesis. If it is not very unlikely, then we will say that we fail to reject the hypothesis and that it could be that the treatment effect <span class="math inline">\(\beta\)</span> is not significant. We never “confirm” that <span class="math inline">\(\beta=0\)</span> because we cannot prove it to be true without perfect knowledge about how the treatment affects people.</p>
-<p>To test the hypothesis, we define a “test statistic” and compute the probability that some random variable takes on a value as extreme as the value of the test statistic. Which random variable we use depends on our null hypothesis, but if this topic is unfamiliar, suffice it to say that if the probability of obtaining as extreme a value as our test statistic is really low, then we may say that there’s enough evidence to conclude that the null hypothesis is probably false and that <span class="math inline">\(\beta\neq 0\)</span>. The treatment has an effect.</p>
-<p>This is the typical approach to testing statistical hypotheses, but notice that there are some seemingly arbitrary limitations to this highly specific process. For example, if we are looking for a treatment effect, then we first pretend like there is no effect and then test whether we can reject such a pretension. What if we wanted to test whether a treatment had no effect? Is that allowed? It’s a little tricky. When we compute a test statistic, we compute it in such a way so that we can say what it’s probability distribution is only supposing that the null hypothesis is true. For example, if our test statistic is the average body temperature of a patient receiving the treatment, then under the assumption that the treatment causes no change in their condition, we can say that their average body temparature should be distributed around an average value of about 98 degrees Fahrenheit. If we observe that the patients’ temperatures are far away from 98 on average, then it sure seems like the treatment is having an effect!</p>
-<p>However, if instead we wanted to check whether the treatment did not have an effect, then we might try starting off with the null hypothesis that their average temperature is <em>not</em> 98 degrees. If we can show that this hypothesis is unlikely to be true, then we can reject this claim and say that there is not an effect. (If we used the hypothesis <span class="math inline">\(\beta=98\)</span>, then the best we could do with that test is “fail to reject” the claim that <span class="math inline">\(\beta=98\)</span> rather than proving it.) So now we suppose that <span class="math inline">\(\beta\neq 98\)</span>. How do we test this? Do we pretend that <span class="math inline">\(\beta=100\)</span> and compare with our patients’ data? Why not <span class="math inline">\(98.1\)</span>? Why not <span class="math inline">\(98.001\)</span>? It is not clear how to compare our data with our hypothesis in this scenario. Thus the problem then arises that if you want to ask a statistician for negative results, then you’re out of luck. Our hypothesis test process only knows how to handle questions which ask for positive results.</p>
+<p>When we first learn how to test hypotheses, we learn to test “simple”
+hypotheses. Let us start here.</p>
+<p>Recall the hypothesis testing process. A
+researcher may ask whether it is likely the case that a treatment that they are
+administering to a portion of their experiment participants is causing a
+significant difference in their health outcomes. The optimistic researcher
+would like to see that the people receiving the treatment are turning out
+better than are the people receiving no treatment, and so they perform a
+“hypothesis test” with the “null hypothesis” that the treatment effect (call it
+<span class="math inline">\(\beta\)</span>) is not significant (i.e. <span class="math inline">\(\beta=0\)</span>). If we find that this hypothesis
+is very unlikely to be true given the data that we collect in the experiment,
+then we will reject the hypothesis. If it is not very unlikely, then we will
+say that we fail to reject the hypothesis and that it could be that the
+treatment effect <span class="math inline">\(\beta\)</span> is not significant. We never “confirm” that <span class="math inline">\(\beta=0\)</span>
+because we cannot prove it to be true without perfect knowledge about how the
+treatment affects people.</p>
+<p>To test the hypothesis, we define a “test statistic”
+and compute the probability that some random variable takes on a value as
+extreme as the value of the test statistic. Which random variable we use
+depends on our null hypothesis, but if this topic is unfamiliar, suffice it to
+say that if the probability of obtaining as extreme a value as our test
+statistic is really low,
+then we may say that there’s enough evidence to conclude that the null
+hypothesis is probably false and that <span class="math inline">\(\beta\neq 0\)</span>. The treatment has an
+effect.</p>
+<p>This is the typical approach to testing statistical hypotheses, but notice that
+there are some seemingly arbitrary limitations to this highly specific process.
+For example, if we are looking for a treatment effect, then we first pretend
+like there is no effect and then test whether we can reject such a pretension.
+What if we wanted to test whether a treatment had no effect? Is that allowed?
+It’s a little tricky. When we compute a test statistic, we compute it in such a
+way so that we can say what it’s probability distribution is only supposing
+that the null hypothesis is true. For example, if our test statistic is the
+average body temperature of a patient receiving the treatment, then under the
+assumption that the treatment causes no change in their condition, we can say
+that their average body temparature should be distributed around an average
+value of about 98 degrees Fahrenheit. If we observe that the patients’
+temperatures are far away from 98 on average, then it sure seems like the
+treatment is having an effect!</p>
+<p>However, if instead we wanted to check whether the treatment did not have an
+effect, then we might try starting off with the null hypothesis that their
+average temperature is <em>not</em> 98 degrees. If we can show that this
+hypothesis is unlikely to be true, then we can reject this claim and say that
+there is not an effect. (If we used the hypothesis <span class="math inline">\(\beta=98\)</span>, then the best we
+could do with that test is “fail to reject” the claim that <span class="math inline">\(\beta=98\)</span> rather
+than proving it.) So now we suppose that <span class="math inline">\(\beta\neq 98\)</span>. How do we test this?
+Do we pretend that <span class="math inline">\(\beta=100\)</span> and compare with our patients’ data? Why not
+<span class="math inline">\(98.1\)</span>? Why not <span class="math inline">\(98.001\)</span>? It is not clear how to compare our data with our
+hypothesis in this scenario. Thus the problem then arises that if you want to
+ask a statistician for negative results, then you’re out of luck. Our
+hypothesis test process only knows how to handle questions which ask for
+positive results.</p>
 <h1 id="unphysical-specificity">Unphysical specificity</h1>
-<p>If, back when I was four years old, you (found me and) asked me if the number 100 is a big number, then I probably would have told you, Yes, it is. If you asked ten-year-old me the same question, then I probably would have said no. But it’s the same number! you tell me (a ten-year-old, now damaged by your charmless consultation).</p>
-<p>It would be in our interest to settle consistently, completely, once-and-for-all what constitutes statistically “significant” evidence for or against a hypothesis. The difficult that we face in doing this rigorously is that there is no physical law which governs the cutoff point for good or bad evidence. At once there is the fact of the matter into which we inquire with our test - for example, there is a true and absolute body temperature which an experiment participant should expect to experience as a result of their participation - and there is our limited view of the fact - limited by the number of people participating, by the precision of our thermometers, and so on. There is no piece of technology capable of deciding from our limited view what the truth is, and there is no method of obtaining the truth by philosophy alone, either. The only propositional knowledge that we have that is not subject to revision is the combination of impressions gained directly through the senses as well as any statements made by the pope <em>ex cathedra</em>.</p>
-<p>For this reason, when we test a hypothesis, we have to make our judgment on that hypothesis with the knowledge that we are tolerating the possibility of making errors. In particular, there is a possibility of rejecting a hypothesis that is actually true (which we call a <em>Type I</em> error) as well as of failing to reject a hypothesis that is actually false (which we call a <em>Type II</em> error).</p>
-<p>Suppose we establish for ourselves the principle that we should try to reject as many false hypotheses as we can in our time on Earth but not falsely reject more than 5% of the true hypotheses. If we figure out the probability distribution of a test statistic with which we can test our hypotheses, then let’s just mark off the parts of the distribution which represent the most extreme 5% of values that the statistic can take. If the statistic for a test lands in one of those marked-off regions, then we will reject the hypothesis being tested. If it’s a bell curve-like distribution, then that looks something like this:</p>
+<p>If, back when I was four years old, you (found me and) asked me if the number
+100 is a big number, then I probably would have told you, Yes, it is. If you
+asked ten-year-old me the same question, then I probably would have said no.
+But it’s the same number! you tell me (a ten-year-old, now damaged by your
+charmless consultation).</p>
+<p>It would be in our interest to settle consistently, completely,
+once-and-for-all what constitutes statistically “significant” evidence for or
+against a hypothesis. The difficulty that we face in doing this rigorously is
+that there is no physical law which governs the cutoff point for good or bad
+evidence. At once there is the fact of the matter into which we inquire with
+our test - for example, there is a true and absolute body temperature which an
+experiment participant should expect to experience as a result of their
+participation - and there is our limited view of the fact - limited by the
+number of people participating, by the precision of our thermometers, and so
+on. There is no piece of technology capable of deciding from our limited view
+what the truth is, and there is no method of obtaining the truth by philosophy
+alone, either. The only propositional knowledge that we have that is not
+subject to revision is the combination of impressions gained directly through
+the senses as well as any statements made by the pope <em>ex cathedra</em>.</p>
+<p>For this reason, when we test a hypothesis, we have to make our judgment on
+that hypothesis with the knowledge that we are tolerating the possibility of
+making errors. In particular, there is a possibility of rejecting a hypothesis
+that is actually true (which we call a <em>Type I</em> error) as well as of failing to
+reject a hypothesis that is actually false (which we call a <em>Type II</em> error).</p>
+<p>Suppose we establish for ourselves the principle that we should try to reject
+as many false hypotheses as we can in our time on Earth but not falsely reject
+more than 5% of the true hypotheses. If we figure out the probability
+distribution of a test statistic with which we can test our hypotheses, then
+let’s just mark off the parts of the distribution which represent the most
+extreme 5% of values that the statistic can take. If the statistic for a test
+lands in one of those marked-off regions, then we will reject the hypothesis
+being tested. If it’s a bell curve-like distribution, then that looks something
+like this:</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
-<img src="third_files/figure-html5/unnamed-chunk-3-1.png" alt="Some distribution with a hypothesis rejection region highlighted" width="624" />
+<div class="figure"><span style="display:block;" id="fig:middleconfint"></span>
+<img src="third_files/figure-html5/middleconfint-1.png" alt="Some distribution with a hypothesis rejection region highlighted" width="624" />
 <p class="caption">
 Figure 1: Some distribution with a hypothesis rejection region highlighted
 </p>
 </div>
 </div>
-<p>However, it somehow feels inappropriate to allow our treatment of evidence to be this black and white. Should it be the case that test statistics which fall <em>just barely outside</em> of the rejection region lead to retained hypotheses while test statistics which fall <em>just barely inside</em> lead to rejections? It doesn’t feel like there’s a qualitative difference in small differences at the boundary when there isn’t a difference in small differences somewhere in the middle. This uncomfortable fact about hypothesis testing merely helps to illustrate the one of the shortcomings of formal statements about statistical observations. It’s not the case that we’ve proved anything interesting when we reject a hypothesis on some basis of statistical evidence. We are merely summarizing the hypothesis in some manner that is precise yet arbitrary. We have assigned some number to the hypothesis and we have described that number as being “rejectable” or “not rejectable,” but this particular concept of “rejectable” here is so specific that it should not be mistaken for ordinary language terms like “believable” or “interesting” or “possibly worth studying further.” It is useful only insofar as it makes efficient and fairly consistent the process of actually deciding which hypotheses are believable, interesting, or possibly worth studying further.</p>
+<p>However, it somehow feels inappropriate to allow our treatment of evidence to
+be this black and white. Should it be the case that test statistics which fall
+<em>just barely outside</em> of the rejection region lead to retained hypotheses while
+test statistics which fall <em>just barely inside</em> lead to rejections? It doesn’t
+feel like there’s a qualitative difference in small differences at the boundary
+when there isn’t a difference in small differences somewhere in the middle.
+This uncomfortable fact about hypothesis testing merely helps to illustrate
+one of the shortcomings of formal statements about statistical observations.
+It’s not the case that we’ve proved anything interesting when we reject a
+hypothesis on some basis of statistical evidence. We are merely summarizing the
+hypothesis in some manner that is precise yet arbitrary. We have assigned some
+number to the hypothesis and we have described that number as being
+“rejectable” or “not rejectable,” but this particular concept of “rejectable”
+here is so specific that it should not be mistaken for ordinary language terms
+like “believable” or “interesting” or “possibly worth studying further.” It is
+useful only insofar as it makes efficient and fairly consistent the process of
+actually deciding which hypotheses are believable, interesting, or possibly
+worth studying further.</p>
+<h1 id="individuals-dont-care-about-statistical-confidence">Individuals don’t care about statistical confidence</h1>
+<p>When one poses a hypothesis for statistical testing, there is an assumption
+that their data points are all distributed similarly so that they can share
+information with each other and give some idea what the underlying distribution
+looks like. This is the assumption of “independent and identically distributed
+data” (or the i.i.d. assumption). In reality, this assumption is not obvious.
+For example, in a medical study maybe a researcher would hope that the people who participate
+in the study share general traits so that no one has a wildly different
+reaction to a treatment and demonstrates an uncommon, unexpected side-effect.
+Otherwise, maybe they would hope that if any uncommon traits are represented,
+then alternative traits are also represented, such as having both overweight and
+underweight, old and young, healthy and ill participants, so that a difference
+in outcomes can be measured. These are all reasonable considerations for a
+researcher who is trying to identify an average treatment effect, but they
+don’t necessarily mean anything to an individual who faces the choice of
+whether or not to receive the treatment.</p>
+<p>To illustrate this point, consider the following scenario. A potassium
+supplement is recommended to you by your doctor, and they assure you that it
+will make you feel better with high confidence.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> How do they know? Well, the
+supplement was administered to a large cohort of study participants and 95% of
+those participants fell within an interval of “good” potassium levels in their
+blood, say in the whitened-out region of <a href="#fig:middleconfint">1</a>. Looking at
+the curve, however, you note that at the same time about 95% of participants
+fell outside of the interval of “perfect” potassium levels, as depicted in
+<a href="#fig:endsconfint">2</a>. Here is another 95% confidence set that your doctor
+could have showed you which is as valid as the previous one yet emphasizes a
+less optimistic interpretation of the study outcomes. Being the shrewd
+investigator that you are, you attend to your fear of possibly being an outlier-
+patient and very likely not being among those most rewarded for receiving
+treatment and forego the treatment.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:endsconfint"></span>
+<img src="third_files/figure-html5/endsconfint-1.png" alt="Some distribution with a weird hypothesis rejection region highlighted" width="624" />
+<p class="caption">
+Figure 2: Some distribution with a weird hypothesis rejection region highlighted
+</p>
+</div>
+</div>
+<p>Are you wrong to make this judgment? as many people may do when they forego
+medical interventions in fear of negative side effects. I answer that this is
+not necessarily wrong, but if it seems at all odd that one would report on a
+non-standard confidence interval of the form <span class="math inline">\((-\infty, L]\cup[U,\infty)\)</span> and
+let their decision be determined by that interval, then it may be a fun
+exercise to convince yourself that a confidence interval of the form <span class="math inline">\([L, U]\)</span>
+always makes sense. Which cases do you want to capture with your interval? The
+“normal” ones or the “abnormal” ones?</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>I’m really not accusing anyone in particular. There are necessary constraints on how many times instructors of introductory statistics classes can tell their students that this or that statistical method is actually wrong and not useful, and students sometimes just want to know if their answer is “correct” so that they can repeat their answers on the exam.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>I’m really not accusing anyone in particular. There are
+necessary constraints on how many times instructors of introductory statistics
+classes can tell their students that this or that statistical method is
+actually wrong and not useful, and students sometimes just want to know if
+their answer is “correct” so that they can repeat their answers on the exam.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Suppose your blood potassium
+levels matter a lot for feeling well.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--radix_placeholder_article_footer-->
