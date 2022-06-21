@@ -1,0 +1,325 @@
+---
+title: "On answering the wrong question"
+description: |
+  Some examples of the shortcomings of hypothesis testing.
+author:
+  - name: James Carzon 
+    url: https://jamescarzon.github.io/
+    affiliation: Carnegie Mellon University
+    affiliation_url: http://www.stat.cmu.edu/
+date: 10-03-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+require(tidyverse)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+```
+
+```{r, fig.align='center'}
+#knitr::include_graphics("img/")
+```
+
+Sometimes we find ourselves answering a different question than we'd been 
+asked. We've all been there. One time I'd spent several minutes explaining the 
+overlap in Pittsburgh bus route coverage to a freshman at CMU who had asked me 
+"Where does the Carnegie Museum of Art sit among your favorite coffee 
+shops?" So trust me, I've been there (and their cafe's lattes are 
+middle-of-the-road).
+
+Another classic example of answering the wrong question is the interpretation 
+of hypothesis tests in statistics. Say for the sake of discussion that I'm an 
+ordinary seismologist who has wandered into your home, and you ask me, "What's 
+the probability that an earthquake happens in Yellowstone National Park this 
+year?" Bumbling and jabbering under my breath, I help myself to your dusty 
+floor and secure myself against the door so that no one may leave as I respond 
+to your plainly stated question, answering: "Well, you see, within ninety-five percent error bars we can say with asymptotic certainty that that the 
+likelihood of a seismic event in Yellowstone in the next year is predicted to 
+be very unlikely with a confidence level of 0.05 and a $P$-value of 1.21." You 
+think to yourself, are all seismologists like this? but you splurt out (rudely), 
+"Hey, wait a minute! I didn't ask you about the _likelihood_. I asked you 
+about the _probability_! And I certainly didn't need you to conceal your sneaky 
+substitution amongst uninteresting remarks on $P$-values and confidence 
+levels." But alas, every scientist knows that a simply stated conclusion is a 
+false one, and so every caveat known to be relevant to any statistical 
+hypothesis ever must be rattled off upon its statement, like possible side 
+effects to a new drug during a Super Bowl spot.
+
+In this post, let's ask some of the questions that we're not allowed to ask in 
+an introductory statistics class, the questions that scientists aren't allowed 
+to answer straightforwardly because their statistics profs say so. The 
+hypothesis testing process that is so 
+fundamental to the conduct of statistics in the real world - or so they would 
+have you believe^[I'm really not accusing anyone in particular. There are 
+necessary constraints on how many times instructors of introductory statistics 
+classes can tell their students that this or that statistical method is 
+actually wrong and not useful, and students sometimes just want to know if 
+their answer is "correct" so that they can repeat their answers on the exam.] - 
+is actually such a rigid concept that the 
+rules may seem unintuitive and the results, uninteresting. It is time now to
+discuss of these nagging issues.
+
+# A preference for positive results
+
+When we first learn how to test hypotheses, we learn to test "simple" 
+hypotheses. Let us start here.
+
+Recall the hypothesis testing process. A 
+researcher may ask whether it is likely the case that a treatment that they are 
+administering to a portion of their experiment participants is causing a 
+significant difference in their health outcomes. The optimistic researcher 
+would like to see that the people receiving the treatment are turning out 
+better than are the people receiving no treatment, and so they perform a 
+"hypothesis test" with the "null hypothesis" that the treatment effect (call it 
+$\beta$) is not significant (i.e. $\beta=0$). If we find that this hypothesis 
+is very unlikely to be true given the data that we collect in the experiment, 
+then we will reject the hypothesis. If it is not very unlikely, then we will 
+say that we fail to reject the hypothesis and that it could be that the 
+treatment effect $\beta$ is not significant. We never "confirm" that $\beta=0$ 
+because we cannot prove it to be true without perfect knowledge about how the 
+treatment affects people.
+
+To test the hypothesis, we define a "test statistic" 
+and compute the probability that some random variable takes on a value as 
+extreme as the value of the test statistic. Which random variable we use 
+depends on our null hypothesis, but if this topic is unfamiliar, suffice it to 
+say that if the probability of obtaining as extreme a value as our test 
+statistic is really low, 
+then we may say that there's enough evidence to conclude that the null 
+hypothesis is probably false and that $\beta\neq 0$. The treatment has an 
+effect.
+
+This is the typical approach to testing statistical hypotheses, but notice that 
+there are some seemingly arbitrary limitations to this highly specific process. 
+For example, if we are looking for a treatment effect, then we first pretend 
+like there is no effect and then test whether we can reject such a pretension. 
+What if we wanted to test whether a treatment had no effect? Is that allowed? 
+It's a little tricky. When we compute a test statistic, we compute it in such a 
+way so that we can say what it's probability distribution is only supposing 
+that the null hypothesis is true. For example, if our test statistic is the 
+average body temperature of a patient receiving the treatment, then under the 
+assumption that the treatment causes no change in their condition, we can say 
+that their average body temparature should be distributed around an average 
+value of about 98 degrees Fahrenheit. If we observe that the patients' 
+temperatures are far away from 98 on average, then it sure seems like the 
+treatment is having an effect!
+
+However, if instead we wanted to check whether the treatment did not have an 
+effect, then we might try starting off with the null hypothesis that their 
+average temperature is _not_ 98 degrees. If we can show that this 
+hypothesis is unlikely to be true, then we can reject this claim and say that 
+there is not an effect. (If we used the hypothesis $\beta=98$, then the best we 
+could do with that test is "fail to reject" the claim that $\beta=98$ rather 
+than proving it.) So now we suppose that $\beta\neq 98$. How do we test this? 
+Do we pretend that $\beta=100$ and compare with our patients' data? Why not 
+$98.1$? Why not $98.001$? It is not clear how to compare our data with our 
+hypothesis in this scenario. Thus the problem then arises that if you want to 
+ask a statistician for negative results, then you're out of luck. Our 
+hypothesis test process only knows how to handle questions which ask for 
+positive results.
+
+# Unphysical specificity
+
+If, back when I was four years old, you (found me and) asked me if the number 
+100 is a big number, then I probably would have told you, Yes, it is. If you 
+asked ten-year-old me the same question, then I probably would have said no. 
+But it's the same number! you tell me (a ten-year-old, now damaged by your 
+charmless consultation).
+
+It would be in our interest to settle consistently, completely, 
+once-and-for-all what constitutes statistically "significant" evidence for or 
+against a hypothesis. The difficulty that we face in doing this rigorously is 
+that there is no physical law which governs the cutoff point for good or bad 
+evidence. At once there is the fact of the matter into which we inquire with 
+our test - for example, there is a true and absolute body temperature which an 
+experiment participant should expect to experience as a result of their 
+participation - and there is our limited view of the fact - limited by the 
+number of people participating, by the precision of our thermometers, and so 
+on. There is no piece of technology capable of deciding from our limited view 
+what the truth is, and there is no method of obtaining the truth by philosophy 
+alone, either. The only propositional knowledge that we have that is not 
+subject to revision is the combination of impressions gained directly through 
+the senses as well as any statements made by the pope _ex cathedra_.
+
+For this reason, when we test a hypothesis, we have to make our judgment on 
+that hypothesis with the knowledge that we are tolerating the possibility of 
+making errors. In particular, there is a possibility of rejecting a hypothesis 
+that is actually true (which we call a _Type I_ error) as well as of failing to 
+reject a hypothesis that is actually false (which we call a _Type II_ error). 
+
+Suppose we establish for ourselves the principle that we should try to reject 
+as many false hypotheses as we can in our time on Earth but not falsely reject 
+more than 5% of the true hypotheses. If we figure out the probability 
+distribution of a test statistic with which we can test our hypotheses, then 
+let's just mark off the parts of the distribution which represent the most 
+extreme 5% of values that the statistic can take. If the statistic for a test 
+lands in one of those marked-off regions, then we will reject the hypothesis 
+being tested. If it's a bell curve-like distribution, then that looks something 
+like this:
+
+```{r, eval=FALSE}
+data.frame(statistic = rnorm(100000)) %>% 
+  filter(abs(statistic) < 2.5) %>% 
+  ggplot() +
+  geom_density(aes(x = statistic),
+               fill = "#a6bddb",
+               alpha = 0.5) + 
+  geom_vline(xintercept = qnorm(c(0.025, 0.975))) +
+  geom_hline(yintercept = 0) +
+  geom_rect(data = data.frame(xmin = -Inf,
+                              xmax = qnorm(0.025),
+                              ymin = -Inf,
+                              ymax = Inf),
+            aes(xmin = xmin,
+                xmax = xmax,
+                ymin = ymin,
+                ymax = ymax),
+            fill = "#1c9099",
+            alpha = 0.25) +
+  geom_rect(data = data.frame(xmin = qnorm(0.975),
+                              xmax = Inf,
+                              ymin = -Inf,
+                              ymax = Inf),
+            aes(xmin = xmin,
+                xmax = xmax,
+                ymin = ymin,
+                ymax = ymax),
+            fill = "#1c9099",
+            alpha = 0.25) +
+  geom_rect(data = data.frame(xmin = qnorm(0.025),
+                              xmax = qnorm(0.975),
+                              ymin = -Inf,
+                              ymax = Inf),
+              aes(xmin = xmin,
+                  xmax = xmax,
+                  ymin = ymin,
+                  ymax = ymax),
+              fill = "#ece2f0",
+              alpha = 0.25) +
+  theme_void()
+```
+
+
+```{r middleconfint, fig.cap="Some distribution with a hypothesis rejection region highlighted"}
+set.seed(1)
+
+data.frame(statistic = rnorm(100000)) %>% 
+  filter(abs(statistic) < 2.5) %>% 
+  ggplot() +
+  geom_vline(xintercept = qnorm(c(0.025, 0.975))) +
+  geom_hline(yintercept = 0) +
+  geom_rect(data = data.frame(xmin = -Inf,
+                              xmax = qnorm(0.025),
+                              ymin = -Inf,
+                              ymax = Inf),
+            aes(xmin = xmin,
+                xmax = xmax,
+                ymin = ymin,
+                ymax = ymax),
+            fill = "black") +
+  geom_rect(data = data.frame(xmin = qnorm(0.975),
+                              xmax = Inf,
+                              ymin = -Inf,
+                              ymax = Inf),
+            aes(xmin = xmin,
+                xmax = xmax,
+                ymin = ymin,
+                ymax = ymax),
+            fill = "black") +
+    geom_density(aes(x = statistic),
+             fill = "grey",
+             alpha = 0.5) + 
+  theme_void()
+```
+
+However, it somehow feels inappropriate to allow our treatment of evidence to 
+be this black and white. Should it be the case that test statistics which fall 
+_just barely outside_ of the rejection region lead to retained hypotheses while 
+test statistics which fall _just barely inside_ lead to rejections? It doesn't 
+feel like there's a qualitative difference in small differences at the boundary 
+when there isn't a difference in small differences somewhere in the middle. 
+This uncomfortable fact about hypothesis testing merely helps to illustrate 
+one of the shortcomings of formal statements about statistical observations. 
+It's not the case that we've proved anything interesting when we reject a 
+hypothesis on some basis of statistical evidence. We are merely summarizing the 
+hypothesis in some manner that is precise yet arbitrary. We have assigned some 
+number to the hypothesis and we have described that number as being 
+"rejectable" or "not rejectable," but this particular concept of "rejectable" 
+here is so specific that it should not be mistaken for ordinary language terms 
+like "believable" or "interesting" or "possibly worth studying further." It is 
+useful only insofar as it makes efficient and fairly consistent the process of 
+actually deciding which hypotheses are believable, interesting, or possibly 
+worth studying further.
+
+# Individuals don't care about statistical confidence
+
+When one poses a hypothesis for statistical testing, there is an assumption 
+that their data points are all distributed similarly so that they can share 
+information with each other and give some idea what the underlying distribution 
+looks like. This is the assumption of "independent and identically distributed 
+data" (or the i.i.d. assumption). In reality, this assumption is not obvious. 
+For example, in a medical study maybe a researcher would hope that the people who participate 
+in the study share general traits so that no one has a wildly different 
+reaction to a treatment and demonstrates an uncommon, unexpected side-effect. 
+Otherwise, maybe they would hope that if any uncommon traits are represented, 
+then alternative traits are also represented, such as having both overweight and 
+underweight, old and young, healthy and ill participants, so that a difference 
+in outcomes can be measured. These are all reasonable considerations for a 
+researcher who is trying to identify an average treatment effect, but they 
+don't necessarily mean anything to an individual who faces the choice of 
+whether or not to receive the treatment.
+
+To illustrate this point, consider the following scenario. A potassium 
+supplement is recommended to you by your doctor, and they assure you that it 
+will make you feel better with high confidence.^[Suppose your blood potassium 
+levels matter a lot for feeling well.] How do they know? Well, the 
+supplement was administered to a large cohort of study participants and 95% of 
+those participants fell within an interval of "good" potassium levels in their 
+blood, say in the whitened-out region of \@ref(fig:middleconfint). Looking at 
+the curve, however, you note that at the same time about 95% of participants 
+fell outside of the interval of "perfect" potassium levels, as depicted in 
+\@ref(fig:endsconfint). Here is another 95% confidence set that your doctor 
+could have showed you which is as valid as the previous one yet emphasizes a 
+less optimistic interpretation of the study outcomes. Being the shrewd 
+investigator that you are, you attend to your fear of possibly being an outlier-
+patient and very likely not being among those most rewarded for receiving 
+treatment and forego the treatment.
+
+
+```{r endsconfint, fig.cap="Some distribution with a weird hypothesis rejection region highlighted"}
+set.seed(1)
+
+data.frame(statistic = rnorm(100000)) %>% 
+  filter(abs(statistic) < 2.5) %>% 
+  ggplot() +
+  geom_vline(xintercept = qnorm(c(0.5-0.025, 0.5+0.025))) +
+  geom_hline(yintercept = 0) +
+  geom_rect(data = data.frame(xmin = qnorm(0.5-0.025),
+                              xmax = qnorm(0.5+0.025),
+                              ymin = -Inf,
+                              ymax = Inf),
+            aes(xmin = xmin,
+                xmax = xmax,
+                ymin = ymin,
+                ymax = ymax),
+            fill = "black") +
+  geom_density(aes(x = statistic),
+             fill = "grey",
+             alpha = 0.5) + 
+  theme_void()
+```
+
+Are you wrong to make this judgment? as many people may do when they forego 
+medical interventions in fear of negative side effects. I answer that this is 
+not necessarily wrong, but if it seems at all odd that one would report on a 
+non-standard confidence interval of the form $(-\infty, L]\cup[U,\infty)$ and 
+let their decision be determined by that interval, then it may be a fun 
+exercise to convince yourself that a confidence interval of the form $[L, U]$ 
+always makes sense. Which cases do you want to capture with your interval? The 
+"normal" ones or the "abnormal" ones?
