@@ -86,40 +86,64 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
+</style>
 
   <!--radix_placeholder_meta_tags-->
-<title>James Carzon's Blog: On answering the wrong question</title>
+<title>James Carzon's Blog: History, meet your match!</title>
 
-<meta property="description" itemprop="description" content="Some examples of how statistical hypothesis testing sometimes answers &#10;different questions than we would like to ask."/>
+<meta property="description" itemprop="description" content="An exposition of the computer model calibration method originated in the &#10;field of oil reservoir engineering known as &quot;history matching.&quot;"/>
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2022-06-21"/>
-<meta property="article:created" itemprop="dateCreated" content="2022-06-21"/>
+<meta property="article:published" itemprop="datePublished" content="2023-06-04"/>
+<meta property="article:created" itemprop="dateCreated" content="2023-06-04"/>
 <meta name="article:author" content="James Carzon"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="James Carzon&#39;s Blog: On answering the wrong question"/>
+<meta property="og:title" content="James Carzon&#39;s Blog: History, meet your match!"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="Some examples of how statistical hypothesis testing sometimes answers &#10;different questions than we would like to ask."/>
+<meta property="og:description" content="An exposition of the computer model calibration method originated in the &#10;field of oil reservoir engineering known as &quot;history matching.&quot;"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="James Carzon&#39;s Blog"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="James Carzon&#39;s Blog: On answering the wrong question"/>
-<meta property="twitter:description" content="Some examples of how statistical hypothesis testing sometimes answers &#10;different questions than we would like to ask."/>
+<meta property="twitter:title" content="James Carzon&#39;s Blog: History, meet your match!"/>
+<meta property="twitter:description" content="An exposition of the computer model calibration method originated in the &#10;field of oil reservoir engineering known as &quot;history matching.&quot;"/>
 
 <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Robust observational constraint of uncertain aerosol processes and emissions in a climate model and the effect on aerosol radiative forcing;citation_publication_date=2020;citation_volume=20;citation_doi=10.5194/acp-20-9491-2020;citation_author=Jill S. Johnson;citation_author=Leighton A. Regayre;citation_author=Masaru Yoshioka;citation_author=Kirsty J. Pringle;citation_author=Steven T. Turnock;citation_author=Jo Browse;citation_author=David M. H. Sexton;citation_author=John W. Rostron;citation_author=Nick A. J. Schutgens;citation_author=Daniel G. Partridge;citation_author=Dantong Liu;citation_author=James D. Allan;citation_author=Hugh Coe;citation_author=Aijun Ding;citation_author=David D. Cohen;citation_author=Armand Atanacio;citation_author=Ville Vakkari;citation_author=Eija Asmi;citation_author=Ken S. Carslaw"/>
+  <meta name="citation_reference" content="citation_title=Statistical constraints on climate model parameters using a scalable cloud-based inference framework;citation_publication_date=2023;citation_author=James Carzon;citation_author=Bruno R. Abreu;citation_author=Leighton Regayre;citation_author=Kenneth Carslaw;citation_author=Lucia Deaconu;citation_author=Philip Stier;citation_author=Hamish Gordon;citation_author=Mikael Kuusela"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["On answering the wrong question"]},{"type":"character","attributes":{},"value":["Some examples of how statistical hypothesis testing sometimes answers \ndifferent questions than we would like to ask."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["James Carzon"]},{"type":"character","attributes":{},"value":["https://jamescarzon.github.io/"]},{"type":"character","attributes":{},"value":["Carnegie Mellon University"]},{"type":"character","attributes":{},"value":["http://www.stat.cmu.edu/"]}]}]},{"type":"character","attributes":{},"value":["06-21-2022"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["History, meet your match!"]},{"type":"character","attributes":{},"value":["An exposition of the computer model calibration method originated in the \nfield of oil reservoir engineering known as \"history matching.\""]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["James Carzon"]},{"type":"character","attributes":{},"value":["https://jamescarzon.github.io/"]},{"type":"character","attributes":{},"value":["Carnegie Mellon University"]},{"type":"character","attributes":{},"value":["http://www.stat.cmu.edu/"]}]}]},{"type":"character","attributes":{},"value":["06-04-2023"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","extra_dependencies"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["amsmath"]}},"value":[{"type":"NULL"}]}]}]},{"type":"character","attributes":{},"value":["fourth.bib"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["img/trains_passing.png","img/trains_passing_resize.png","third_files/anchor-4.2.2/anchor.min.js","third_files/bowser-1.9.3/bowser.min.js","third_files/distill-2.2.21/template.v2.js","third_files/figure-html5/endsconfint-1.png","third_files/figure-html5/middleconfint-1.png","third_files/figure-html5/unnamed-chunk-2-1.png","third_files/figure-html5/unnamed-chunk-3-1.png","third_files/header-attrs-2.10/header-attrs.js","third_files/header-attrs-2.14/header-attrs.js","third_files/jquery-1.11.3/jquery.min.js","third_files/jquery-3.6.0/jquery-3.6.0.js","third_files/jquery-3.6.0/jquery-3.6.0.min.js","third_files/jquery-3.6.0/jquery-3.6.0.min.map","third_files/popper-2.6.0/popper.min.js","third_files/tippy-6.2.7/tippy-bundle.umd.min.js","third_files/tippy-6.2.7/tippy-light-border.css","third_files/tippy-6.2.7/tippy.css","third_files/tippy-6.2.7/tippy.umd.min.js","third_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["fourth.bib","fourth_files/anchor-4.2.2/anchor.min.js","fourth_files/bowser-1.9.3/bowser.min.js","fourth_files/distill-2.2.21/template.v2.js","fourth_files/header-attrs-2.14/header-attrs.js","fourth_files/jquery-3.6.0/jquery-3.6.0.js","fourth_files/jquery-3.6.0/jquery-3.6.0.min.js","fourth_files/jquery-3.6.0/jquery-3.6.0.min.map","fourth_files/popper-2.6.0/popper.min.js","fourth_files/tippy-6.2.7/tippy-bundle.umd.min.js","fourth_files/tippy-6.2.7/tippy-light-border.css","fourth_files/tippy-6.2.7/tippy.css","fourth_files/tippy-6.2.7/tippy.umd.min.js","fourth_files/webcomponents-2.0.0/webcomponents.js","img/oil_reservoir.png","img/oil_reservoir_resize.png","img/UQ.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2096,7 +2120,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"On answering the wrong question","description":"Some examples of how statistical hypothesis testing sometimes answers \ndifferent questions than we would like to ask.","authors":[{"author":"James Carzon","authorURL":"https://jamescarzon.github.io/","affiliation":"Carnegie Mellon University","affiliationURL":"http://www.stat.cmu.edu/","orcidID":""}],"publishedDate":"2022-06-21T00:00:00.000-06:00","citationText":"Carzon, 2022"}
+{"title":"History, meet your match!","description":"An exposition of the computer model calibration method originated in the \nfield of oil reservoir engineering known as \"history matching.\"","authors":[{"author":"James Carzon","authorURL":"https://jamescarzon.github.io/","affiliation":"Carnegie Mellon University","affiliationURL":"http://www.stat.cmu.edu/","orcidID":""}],"publishedDate":"2023-06-04T00:00:00.000-06:00","citationText":"Carzon, 2023"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2119,228 +2143,182 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>On answering the wrong question</h1>
+<h1>History, meet your match!</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Some examples of how statistical hypothesis testing sometimes answers
-different questions than we would like to ask.</p></p>
+<p><p>An exposition of the computer model calibration method originated in the
+field of oil reservoir engineering known as “history matching.”</p></p>
 </div>
 
 <div class="d-byline">
   James Carzon <a href="https://jamescarzon.github.io/" class="uri">https://jamescarzon.github.io/</a> (Carnegie Mellon University)<a href="http://www.stat.cmu.edu/" class="uri">http://www.stat.cmu.edu/</a>
   
-<br/>06-21-2022
+<br/>06-04-2023
 </div>
 
 <div class="d-article">
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/trains_passing_resize.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="img/oil_reservoir_resize.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
-<p>Sometimes we find ourselves answering a different question than we’d been
-asked. We’ve all been there. One time I’d spent several minutes explaining the
-overlap in Pittsburgh bus route coverage to a freshman at CMU who had asked me
-“Where does the Carnegie Museum of Art sit among your favorite coffee
-shops?” So trust me, I’ve been there (and their cafe’s lattes are
-middle-of-the-road).</p>
-<p>Another classic example of answering the wrong question is the interpretation
-of hypothesis tests in statistics. Say for the sake of discussion that I’m an
-ordinary seismologist who has wandered into your home, and you ask me, “What’s
-the probability that an earthquake happens in Yellowstone National Park this
-year?” Bumbling and jabbering under my breath, I help myself to your dusty
-floor and secure myself against the door so that no one may leave as I respond
-to your plainly stated question, answering: “Well, you see, within ninety-five percent error bars we can say with asymptotic certainty that that the
-likelihood of a seismic event in Yellowstone in the next year is predicted to
-be very unlikely with a confidence level of 0.05 and a <span class="math inline">\(P\)</span>-value of 1.21.” You
-think to yourself, are all seismologists like this? but you splurt out (rudely),
-“Hey, wait a minute! I didn’t ask you about the <em>likelihood</em>. I asked you
-about the <em>probability</em>! And I certainly didn’t need you to conceal your sneaky
-substitution amongst uninteresting remarks on <span class="math inline">\(P\)</span>-values and confidence
-levels.” But alas, every scientist knows that a simply stated conclusion is a
-false one, and so every caveat known to be relevant to any statistical
-hypothesis ever must be rattled off upon its statement, like possible side
-effects to a new drug during a Super Bowl spot.</p>
-<p>In this post, let’s ask some of the questions that we’re not allowed to ask in
-an introductory statistics class, the questions that scientists aren’t allowed
-to answer straightforwardly because their statistics profs say so. The
-hypothesis testing process that is so
-fundamental to the conduct of statistics in the real world - or so they would
-have you believe<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> -
-is actually such a rigid concept that the
-rules may seem unintuitive and the results, uninteresting. It is time now to
-discuss of these nagging issues.</p>
-<h1 id="a-preference-for-positive-results">A preference for positive results</h1>
-<p>When we first learn how to test hypotheses, we learn to test “simple”
-hypotheses. Let us start here.</p>
-<p>Recall the hypothesis testing process. A
-researcher may ask whether it is likely the case that a treatment that they are
-administering to a portion of their experiment participants is causing a
-significant difference in their health outcomes. The optimistic researcher
-would like to see that the people receiving the treatment are turning out
-better than are the people receiving no treatment, and so they perform a
-“hypothesis test” with the “null hypothesis” that the treatment effect (call it
-<span class="math inline">\(\beta\)</span>) is not significant (i.e. <span class="math inline">\(\beta=0\)</span>). If we find that this hypothesis
-is very unlikely to be true given the data that we collect in the experiment,
-then we will reject the hypothesis. If it is not very unlikely, then we will
-say that we fail to reject the hypothesis and that it could be that the
-treatment effect <span class="math inline">\(\beta\)</span> is not significant. We never “confirm” that <span class="math inline">\(\beta=0\)</span>
-because we cannot prove it to be true without perfect knowledge about how the
-treatment affects people.</p>
-<p>To test the hypothesis, we define a “test statistic”
-and compute the probability that some random variable takes on a value as
-extreme as the value of the test statistic. Which random variable we use
-depends on our null hypothesis, but if this topic is unfamiliar, suffice it to
-say that if the probability of obtaining as extreme a value as our test
-statistic is really low,
-then we may say that there’s enough evidence to conclude that the null
-hypothesis is probably false and that <span class="math inline">\(\beta\neq 0\)</span>. The treatment has an
-effect.</p>
-<p>This is the typical approach to testing statistical hypotheses, but notice that
-there are some seemingly arbitrary limitations to this highly specific process.
-For example, if we are looking for a treatment effect, then we first pretend
-like there is no effect and then test whether we can reject such a pretension.
-What if we wanted to test whether a treatment had no effect? Is that allowed?
-It’s a little tricky. When we compute a test statistic, we compute it in such a
-way so that we can say what it’s probability distribution is only supposing
-that the null hypothesis is true. For example, if our test statistic is the
-average body temperature of a patient receiving the treatment, then under the
-assumption that the treatment causes no change in their condition, we can say
-that their average body temparature should be distributed around an average
-value of about 98 degrees Fahrenheit. If we observe that the patients’
-temperatures are far away from 98 on average, then it sure seems like the
-treatment is having an effect!</p>
-<p>However, if instead we wanted to check whether the treatment did not have an
-effect, then we might try starting off with the null hypothesis that their
-average temperature is <em>not</em> 98 degrees. If we can show that this
-hypothesis is unlikely to be true, then we can reject this claim and say that
-there is not an effect. (If we used the hypothesis <span class="math inline">\(\beta=98\)</span>, then the best we
-could do with that test is “fail to reject” the claim that <span class="math inline">\(\beta=98\)</span> rather
-than proving it.) So now we suppose that <span class="math inline">\(\beta\neq 98\)</span>. How do we test this?
-Do we pretend that <span class="math inline">\(\beta=100\)</span> and compare with our patients’ data? Why not
-<span class="math inline">\(98.1\)</span>? Why not <span class="math inline">\(98.001\)</span>? It is not clear how to compare our data with our
-hypothesis in this scenario. Thus the problem then arises that if you want to
-ask a statistician for negative results, then you’re out of luck. Our
-hypothesis test process only knows how to handle questions which ask for
-positive results.</p>
-<h1 id="unphysical-specificity">Unphysical specificity</h1>
-<p>If, back when I was four years old, you (found me and) asked me if the number
-100 is a big number, then I probably would have told you, Yes, it is. If you
-asked ten-year-old me the same question, then I probably would have said no.
-But it’s the same number! you tell me (a ten-year-old, now damaged by your
-charmless consultation).</p>
-<p>It would be in our interest to settle consistently, completely,
-once-and-for-all what constitutes statistically “significant” evidence for or
-against a hypothesis. The difficulty that we face in doing this rigorously is
-that there is no physical law which governs the cutoff point for good or bad
-evidence. At once there is the fact of the matter into which we inquire with
-our test - for example, there is a true and absolute body temperature which an
-experiment participant should expect to experience as a result of their
-participation - and there is our limited view of the fact - limited by the
-number of people participating, by the precision of our thermometers, and so
-on. There is no piece of technology capable of deciding from our limited view
-what the truth is, and there is no method of obtaining the truth by philosophy
-alone, either. The only propositional knowledge that we have that is not
-subject to revision is the combination of impressions gained directly through
-the senses as well as any statements made by the pope <em>ex cathedra</em>.</p>
-<p>For this reason, when we test a hypothesis, we have to make our judgment on
-that hypothesis with the knowledge that we are tolerating the possibility of
-making errors. In particular, there is a possibility of rejecting a hypothesis
-that is actually true (which we call a <em>Type I</em> error) as well as of failing to
-reject a hypothesis that is actually false (which we call a <em>Type II</em> error).</p>
-<p>Suppose we establish for ourselves the principle that we should try to reject
-as many false hypotheses as we can in our time on Earth but not falsely reject
-more than 5% of the true hypotheses. If we figure out the probability
-distribution of a test statistic with which we can test our hypotheses, then
-let’s just mark off the parts of the distribution which represent the most
-extreme 5% of values that the statistic can take. If the statistic for a test
-lands in one of those marked-off regions, then we will reject the hypothesis
-being tested. If it’s a bell curve-like distribution, then that looks something
-like this:</p>
+<p>Suppose, for the sake of an analogy, that your name is Daniel Plainview and
+that your milkshake doesn’t taste like it used to. Something’s off about it.
+Are there Oreo chunks at the bottom that you just didn’t catch earlier? Is the
+extra Nesquik powder clumping up? You have to try a little bit harder to yield
+the same volume of shake now than you did on first suck, and you require a bit
+of trial and error to find the optimal technique.</p>
+<p>If this sounds like a problem that you have faced before (and suppose, for the
+sake of my argument, that it does), then you might be an oil reservoir
+engineer.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Daniel’s strategic approach to
+the problem of pumping petroleum in the film <em>There Will Be Blood</em> is not
+described in exceedingly technical detail; the dramatic intrigue comes from his
+complex personal machinations and manipulations, not the trivia of maintaining
+OSHA-compliant wells. In the sequel, <em>There Will Be Sweat</em>, Daniel does have to
+pivot into the natural gas industry, and there is a long, boring, drawn out
+sequence where he goes down a <a href="https://en.wikipedia.org/wiki/List_of_natural_gas_and_oil_production_accidents_in_the_United_States">Wikipedia rabbit hole on different accidents that
+occurred in the United States related to natural gas production</a>. But one can reasonably presume that oil pumping is a non-trivial
+affair since it requires very expensive straws that are designed for drinking
+extremely deep “milkshakes” found in glasses of complex shapes (and part of my
+point is that it would make for a really good movie I think if they leaned into
+this aspect of the industry a bit more in the movie). It’s a complex
+engineering endeavour, and there was room for data science to improve it once
+computers became accessible to the engineers who cared about it. The state of
+the art method for a particular aspect of the industry as of the 1970s is this
+method called “history matching.”</p>
+<p>In this post, I will explain what this method is and how it is related to other
+applications and ideas in data science. As it turns out, history matching is
+employed in many problems nowadays, but the literature on its theoretical
+guarantees and statistical properties still seems to be somewhat
+underdeveloped. One of my current projects studies the method while regarding
+it as a means for uncertainty quantification, which is slightly different from
+its original use and should serve as an independent post in the future. For
+now, I will focus on the application to computer model calibration.</p>
+<h1 id="what-is-a-history-match">What is a history match?</h1>
+<p>Let there be something we can measure. If we own an oil well, then maybe we can
+easily measure the amount of oil we produce in a week as well as the oil
+pressure at the point where we’re drilling. Call the space of (production,
+pressure) pairs <span class="math inline">\(Y\)</span>. Let there also be something that we can’t measure but
+which has an effect on the things that we can. In our example, maybe the
+porosity of the rock in which the reservoir of oil is found is hard to measure,
+but it will effect how much oil is sitting inside and thus how much can be
+produced at that location. Call the space of possible porosities <span class="math inline">\(X\)</span>. Let
+<span class="math inline">\(F: X\rightarrow Y\)</span> be a computer program or mathematical model for a
+drilling procedure which takes as input some point in <span class="math inline">\(X\)</span> and gives a point in
+<span class="math inline">\(Y\)</span> as the procedure’s predicted output.
+If we are scientists, then maybe we are interested
+in the porosity for its own sake. If we are a drilling company, then maybe we
+are more specifically interested in how the porosity will affect our
+productivity next week. We’ll suppose that the quantity of interest is
+described by another program or function <span class="math inline">\(\lambda: X\rightarrow\mathbb{R}\)</span>, and
+so the space of possible future production levels is <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p>Our pipeline – if you will – for making some prediction for next week’s
+production level is as follows. Let <span class="math inline">\(x\in X\)</span> be the true porosity, <span class="math inline">\(y\in Y\)</span>
+be the true (production, pressure) pair, and <span class="math inline">\(z\in Y\)</span> be the (production,
+pressure) pair that was actually measured, as in Figure
+<a href="#fig:history-matching">1</a>. (Maybe there was some small amount
+of error when measuring.) Our goal is to first take <span class="math inline">\(z\)</span> and find a point
+<span class="math inline">\(x&#39;\in X\)</span> such that <span class="math inline">\(F(x&#39;)=z\)</span>. Our point <span class="math inline">\(x&#39;\)</span> is our best guess for <span class="math inline">\(x\)</span>. Then
+<span class="math inline">\(\lambda x&#39;\)</span> is our production prediction.</p>
+<p>In practice, the pipeline is a bit more complicated than this. Maybe we would
+like to think that for any point <span class="math inline">\(x&#39;\in X\)</span>, if <span class="math inline">\(F(x&#39;)=z\)</span>, then <span class="math inline">\(x&#39;=x\)</span>. Firstly,
+we should be prepared for the scenario in which our measurements <span class="math inline">\(z\)</span> are
+slightly wrong since our measurements for pressure or volume of oil might be
+rounded off or estimated at some point. Secondly, even if we didn’t have this
+error, it’s possible that <span class="math inline">\(F\)</span> is a function which is not a one-to-one map. That
+is, if you draw its graph (say, production versus porosity) and then draw a
+horizontal line at the production level, then it might not pass the
+horizontal line test. Maybe two different porosities, <span class="math inline">\(x&#39;\)</span> and <span class="math inline">\(x&#39;&#39;\)</span> would
+determine the same production levels. Then which is the best prediction for
+<span class="math inline">\(x\)</span>? For this reason, we will relax our goal. Rather than identifying a point
+prediction for <span class="math inline">\(x\)</span>, we will seek a set <span class="math inline">\(\Xi\subset X\)</span> which includes all of our
+best predictions for <span class="math inline">\(x\)</span>. In particular, we will take the set <span class="math inline">\(\Sigma\)</span> of all
+<span class="math inline">\(y&#39;\in Y\)</span> such that <span class="math inline">\(y&#39;-z\)</span> is less than the maximum amount of error that we
+expect to see from our instruments with which we measure production and
+pressure, and then compute <span class="math inline">\(\Xi=F^{-1}(\Sigma)\)</span>, the set of all <span class="math inline">\(x&#39;\in X\)</span> such
+that <span class="math inline">\(F(x&#39;)\in\Sigma\)</span>. That is a reasonable goal.</p>
 <div class="layout-chunk" data-layout="l-body">
-
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:middleconfint"></span>
-<img src="third_files/figure-html5/middleconfint-1.png" alt="Some distribution with a hypothesis rejection region highlighted" width="624" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:history-matching"></span>
+<img src="img/UQ.png" alt="A schematic view of the problem pursued by history matching. Give constraints on $\lambda x$ from observations $z\in Y$ by estimating error $z-y$ and finding the preimages $x\in X$ which are close to $z$ up to that error level." width="100%" />
 <p class="caption">
-Figure 1: Some distribution with a hypothesis rejection region highlighted
+Figure 1: A schematic view of the problem pursued by history matching. Give constraints on <span class="math inline">\(\lambda x\)</span> from observations <span class="math inline">\(z\in Y\)</span> by estimating error <span class="math inline">\(z-y\)</span> and finding the preimages <span class="math inline">\(x\in X\)</span> which are close to <span class="math inline">\(z\)</span> up to that error level.
 </p>
 </div>
 </div>
-<p>However, it somehow feels inappropriate to allow our treatment of evidence to
-be this black and white. Should it be the case that test statistics which fall
-<em>just barely outside</em> of the rejection region lead to retained hypotheses while
-test statistics which fall <em>just barely inside</em> lead to rejections? It doesn’t
-feel like there’s a qualitative difference in small differences at the boundary
-when there isn’t a difference in small differences somewhere in the middle.
-This uncomfortable fact about hypothesis testing merely helps to illustrate
-one of the shortcomings of formal statements about statistical observations.
-It’s not the case that we’ve proved anything interesting when we reject a
-hypothesis on some basis of statistical evidence. We are merely summarizing the
-hypothesis in some manner that is precise yet arbitrary. We have assigned some
-number to the hypothesis and we have described that number as being
-“rejectable” or “not rejectable,” but this particular concept of “rejectable”
-here is so specific that it should not be mistaken for ordinary language terms
-like “believable” or “interesting” or “possibly worth studying further.” It is
-useful only insofar as it makes efficient and fairly consistent the process of
-actually deciding which hypotheses are believable, interesting, or possibly
-worth studying further.</p>
-<h1 id="individuals-dont-care-about-statistical-confidence">Individuals don’t care about statistical confidence</h1>
-<p>When one poses a hypothesis for statistical testing, there is an assumption
-that their data points are all distributed similarly so that they can share
-information with each other and give some idea what the underlying distribution
-looks like. This is the assumption of “independent and identically distributed
-data” (or the i.i.d. assumption). In reality, this assumption is not obvious.
-For example, in a medical study maybe a researcher would hope that the people who participate
-in the study share general traits so that no one has a wildly different
-reaction to a treatment and demonstrates an uncommon, unexpected side-effect.
-Otherwise, maybe they would hope that if any uncommon traits are represented,
-then alternative traits are also represented, such as having both overweight and
-underweight, old and young, healthy and ill participants, so that a difference
-in outcomes can be measured. These are all reasonable considerations for a
-researcher who is trying to identify an average treatment effect, but they
-don’t necessarily mean anything to an individual who faces the choice of
-whether or not to receive the treatment.</p>
-<p>To illustrate this point, consider the following scenario. A potassium
-supplement is recommended to you by your doctor, and they assure you that it
-will make you feel better with high confidence.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> How do they know? Well, the
-supplement was administered to a large cohort of study participants and 95% of
-those participants fell within an interval of “good” potassium levels in their
-blood, say in the whitened-out region of <a href="#fig:middleconfint">1</a>. Looking at
-the curve, however, you note that at the same time about 95% of participants
-fell outside of the interval of “perfect” potassium levels, as depicted in
-<a href="#fig:endsconfint">2</a>. Here is another 95% confidence set that your doctor
-could have showed you which is as valid as the previous one yet emphasizes a
-less optimistic interpretation of the study outcomes. Being the shrewd
-investigator that you are, you attend to your fear of possibly being an outlier-
-patient and very likely not being among those most rewarded for receiving
-treatment and forego the treatment.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:endsconfint"></span>
-<img src="third_files/figure-html5/endsconfint-1.png" alt="Some distribution with a weird hypothesis rejection region highlighted" width="624" />
-<p class="caption">
-Figure 2: Some distribution with a weird hypothesis rejection region highlighted
-</p>
-</div>
-</div>
-<p>Are you wrong to make this judgment? as many people may do when they forego
-medical interventions in fear of negative side effects. I answer that this is
-not necessarily wrong, but if it seems at all odd that one would report on a
-non-standard confidence interval of the form <span class="math inline">\((-\infty, L]\cup[U,\infty)\)</span> and
-let their decision be determined by that interval, then it may be a fun
-exercise to convince yourself that a confidence interval of the form <span class="math inline">\([L, U]\)</span>
-always makes sense. Which cases do you want to capture with your interval? The
-“normal” ones or the “abnormal” ones?</p>
+<h1 id="how-to-solve-an-inverse-problem">How to solve an inverse problem</h1>
+<p>With the problem and its participating objects described in the abstract, we
+need to decide how to perform history matching concretely. We will see how
+first to write down an <em>implausibility metric</em> and then we will invert the
+metric to obtain an
+implausibility region over <span class="math inline">\(X\)</span>. Under some conditions on the function <span class="math inline">\(F\)</span>, the
+inversion step can be a relatively simple process. In general, the only
+practical solution is to get a Monte Carlo sample of metric values and
+approximate <span class="math inline">\(\Xi\)</span>.</p>
+<h2 id="implausibility-metric">Implausibility metric</h2>
+<p>Suppose that <span class="math inline">\(Y=\mathbb{R}\)</span>, just one scalar quantity, and of <span class="math inline">\(F\)</span> it is known
+how to compute the mean and covariance of the outcome. That is,</p>
+<p><span class="math display">\[\begin{align*}
+  \mu(x) &amp;= \mathbb{E}[F(x)]\text{, and}\\
+  \sigma^2(x) &amp;= \mathbb{E}[F(x)^2] - \mathbb{E}[F(x)]^2
+\end{align*}\]</span></p>
+<p>are both computable. Then the natural implausibility metric is</p>
+<p><span class="math display">\[\begin{equation*}
+  \gamma(x) = \frac{\lvert\mu(x)\rvert}{\sigma(x)}
+\end{equation*}\]</span></p>
+<p>because it accounts for uncertainty <span class="math inline">\(\sigma^2(x)\)</span> in a natural way. More
+generally, we may want to consider multiple measurements – in our motivating
+oil reservoir example, the two measurements are production level and oil
+pressure. Then we will assume that we can measure <span class="math inline">\(D\)</span> quantities <span class="math inline">\(F_i\)</span>,
+<span class="math inline">\(i=1,\ldots, D\)</span> and then compute</p>
+<p><span class="math display">\[\begin{align*}
+  \mu(x) &amp;= (\mathbb{E}[F_i(x)])_{i=1,\ldots,D}\text{, and}\\
+  \Sigma(x) &amp;= (\mathbb{E}[F_i(x)F_j(x)] - \mathbb{E}[F_i(x)]\mathbb{E}[F_j(x))_{i,j=1,\ldots,D}.
+\end{align*}\]</span></p>
+<p>Two candidates for the role of this multi-measurement implausibility metric
+most prominently present themselves in the literature. The first is an <span class="math inline">\(L_2\)</span>
+norm based metric,</p>
+<p><span class="math display">\[\begin{equation}\label{eq:metric_1}
+  \mathscr{I}(x) = \mu^T(x)\Sigma^{-1}(x)\mu(x),
+\end{equation}\]</span></p>
+<p>and the second is an <span class="math inline">\(L_\infty\)</span> norm based metric,</p>
+<p><span class="math display">\[\begin{equation}
+  \mathscr{I}(x) = \underset{i}{\max}\lvert \gamma_i(x)\rvert,
+\end{equation}\]</span></p>
+<p>where the <span class="math inline">\(\gamma_i\)</span> are defined like <span class="math inline">\(\gamma\)</span> but for each component of <span class="math inline">\(F\)</span>.</p>
+<h2 id="inversion-step">Inversion step</h2>
+<p>Referring back to Figure 1, we will use a choice of implausibility metric to
+obtain the set <span class="math inline">\(\Xi\)</span>. This is simply the subset of <span class="math inline">\(X\)</span> which produces small
+implausibilities. On the one hand, one could tune the implausibility threshold
+so that the volume of <span class="math inline">\(\Xi\)</span> is fixed. (This is what I see history matching
+practitioners do most often.) On the other hand, one may desire a probabilistic
+interpretation for <span class="math inline">\(\Xi\)</span> e.g. ``The true conditions / parameter levels lie in
+<span class="math inline">\(\Xi\)</span> with 95% confidence.’’ This requires some assumptions on the distribution
+of the data so that a notion of confidence is explicit. This is, in my opinion,
+a harder question since its appropriateness depends on the quality of the
+analyst’s modeling choices; this question could be treated more thoroughly in a
+later post in lieu of expanding on recent work of my own. For reference, the
+former approach to the inversion step is seen in <span class="citation" data-cites="johnson_robust_2020">(<a href="#ref-johnson_robust_2020" role="doc-biblioref">Johnson et al. 2020</a>)</span> for
+constraining parameters which underly atmospheric aerosol climate models, and
+then my forthcoming paper in <em>Environmental Data Science</em> will view those same
+models but provide probabilistic constraints. The preprint can be found on
+<em>arXiv</em> <span class="citation" data-cites="carzon_statistical_2023">(<a href="#ref-carzon_statistical_2023" role="doc-biblioref">Carzon et al. 2023</a>)</span>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-carzon_statistical_2023" class="csl-entry" role="doc-biblioentry">
+Carzon, James, Bruno R. de Abreu, Leighton Regayre, Kenneth Carslaw, Lucia Deaconu, Philip Stier, Hamish Gordon, and Mikael Kuusela. 2023. <span>“Statistical Constraints on Climate Model Parameters Using a Scalable Cloud-Based Inference Framework.”</span> <em>Environmental Data Science</em>. <a href="https://arxiv.org/abs/2304.03127">https://arxiv.org/abs/2304.03127</a>.
+</div>
+<div id="ref-johnson_robust_2020" class="csl-entry" role="doc-biblioentry">
+Johnson, Jill S., Leighton A. Regayre, Masaru Yoshioka, Kirsty J. Pringle, Steven T. Turnock, Jo Browse, David M. H. Sexton, et al. 2020. <span>“Robust Observational Constraint of Uncertain Aerosol Processes and Emissions in a Climate Model and the Effect on Aerosol Radiative Forcing.”</span> <em>Atmospheric Chemistry and Physics</em> 20 (15): 9491–9524. <a href="https://doi.org/10.5194/acp-20-9491-2020">https://doi.org/10.5194/acp-20-9491-2020</a>.
+</div>
+</div>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>I’m really not accusing anyone in particular. There are
-necessary constraints on how many times instructors of introductory statistics
-classes can tell their students that this or that statistical method is
-actually wrong and not useful, and students sometimes just want to know if
-their answer is “correct” so that they can repeat their answers on the exam.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Suppose your blood potassium
-levels matter a lot for feeling well.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>In other words, if you might not be an oil reservoir engineer, then
+this doesn’t sound like a problem that you have faced before. Since most people
+are not oil reservoir engineers, most people might not be. It follows that most
+people cannot relate to my analogy. For this reason I encourage you all to one
+day try a milkshake and decide for yourself later with better information
+whether this blog post is worth your time rather than deciding against reading
+it on account of it not being relevant to you.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--radix_placeholder_article_footer-->
@@ -2363,7 +2341,10 @@ levels matter a lot for feeling well.<a href="#fnref2" class="footnote-back" rol
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+  <h3 id="references">References</h3>
+  <div id="references-listing"></div>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

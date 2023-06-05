@@ -6,14 +6,14 @@
       "description": "On this site, I blog about my various academic interests for a non-academic \naudience. This is opposed to my non-academic interests - about which I blog \nas an anonymous character at <https://nothalfgood.wordpress.com> - as well \nas my academic interests about which I journal on my homepage at \n<https://jamescarzon.github.io>.",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-06-21T15:55:02-04:00"
+      "last_modified": "2023-06-04T20:50:21-06:00"
     },
     {
       "path": "index.html",
       "title": "Posts",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-06-21T15:55:02-04:00"
+      "last_modified": "2023-06-04T20:50:22-06:00"
     }
   ],
   "collections": ["posts/posts.json"]
