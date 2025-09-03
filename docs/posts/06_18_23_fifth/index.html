@@ -20,26 +20,28 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -48,16 +50,17 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -71,11 +74,11 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -83,41 +86,64 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
-  <!--radix_placeholder_meta_tags-->
-<title>James Carzon's Blog: What does elo measure?</title>
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
+</style>
 
-<meta property="description" itemprop="description" content="A definition of elo rating. An analysis of a chess game of mine. An inaugural &#10;entry in an amateur chess diary, if you will."/>
+  <!--radix_placeholder_meta_tags-->
+<title>James Carzon's Blog: From Gauss to Kolmogorov</title>
+
+<meta property="description" itemprop="description" content="A digest of the paper ``From Gauss to Kolmogorov: Localized measures of &#10;complexity for ellipses&#39;&#39; by Yuting Wei, Billy Fang, and Martin Wainwright &#10;(EJS, 2020)."/>
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2021-08-16"/>
-<meta property="article:created" itemprop="dateCreated" content="2021-08-16"/>
+<meta property="article:published" itemprop="datePublished" content="2023-06-04"/>
+<meta property="article:created" itemprop="dateCreated" content="2023-06-04"/>
 <meta name="article:author" content="James Carzon"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="James Carzon&#39;s Blog: What does elo measure?"/>
+<meta property="og:title" content="James Carzon&#39;s Blog: From Gauss to Kolmogorov"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="A definition of elo rating. An analysis of a chess game of mine. An inaugural &#10;entry in an amateur chess diary, if you will."/>
+<meta property="og:description" content="A digest of the paper ``From Gauss to Kolmogorov: Localized measures of &#10;complexity for ellipses&#39;&#39; by Yuting Wei, Billy Fang, and Martin Wainwright &#10;(EJS, 2020)."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="James Carzon&#39;s Blog"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="James Carzon&#39;s Blog: What does elo measure?"/>
-<meta property="twitter:description" content="A definition of elo rating. An analysis of a chess game of mine. An inaugural &#10;entry in an amateur chess diary, if you will."/>
+<meta property="twitter:title" content="James Carzon&#39;s Blog: From Gauss to Kolmogorov"/>
+<meta property="twitter:description" content="A digest of the paper ``From Gauss to Kolmogorov: Localized measures of &#10;complexity for ellipses&#39;&#39; by Yuting Wei, Billy Fang, and Martin Wainwright &#10;(EJS, 2020)."/>
 
 <!--/radix_placeholder_meta_tags-->
   
-  <meta name="citation_reference" content="citation_title=Statistical analysis of the elo rating system in chess;citation_publication_date=2020;citation_author=Arthur Berg"/>
+  <meta name="citation_reference" content="citation_title=From Gauss to Kolmogorov: Localized measures of complexity for ellipses;citation_publication_date=2020;citation_volume=14;citation_doi=10.1214/20-EJS1739;citation_issn=1935-7524;citation_author=Yuting Wei;citation_author=Billy Fang;citation_author=Martin J. Wainwright"/>
+  <meta name="citation_reference" content="citation_title=High-Dimensional Statistics: A Non-Asymptotic Viewpoint;citation_publication_date=2019;citation_publisher=Cambridge University Press;citation_author=Martin J. Wainwright"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["What does elo measure?"]},{"type":"character","attributes":{},"value":["A definition of elo rating. An analysis of a chess game of mine. An inaugural \nentry in an amateur chess diary, if you will."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["James Carzon"]},{"type":"character","attributes":{},"value":["https://jamescarzon.github.io/"]},{"type":"character","attributes":{},"value":["Carnegie Mellon University"]},{"type":"character","attributes":{},"value":["http://www.stat.cmu.edu/"]}]}]},{"type":"character","attributes":{},"value":["08-16-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["second.bib"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["From Gauss to Kolmogorov"]},{"type":"character","attributes":{},"value":["A digest of the paper ``From Gauss to Kolmogorov: Localized measures of \ncomplexity for ellipses'' by Yuting Wei, Billy Fang, and Martin Wainwright \n(EJS, 2020)."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["James Carzon"]},{"type":"character","attributes":{},"value":["https://jamescarzon.github.io/"]},{"type":"character","attributes":{},"value":["Carnegie Mellon University"]},{"type":"character","attributes":{},"value":["http://www.stat.cmu.edu/"]}]}]},{"type":"character","attributes":{},"value":["06-04-2023"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["bookdown::html_document2"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","base_format","extra_dependencies"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["distill::distill_article"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["amssymb","amsmath","amsthm","biblatex","fullpage","graphicx","mathrsfs","enumitem","mathtools","hyperref","actuarialsymbol"]}},"value":[{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"}]}]}]},{"type":"character","attributes":{},"value":["fifth.bib"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["img/elo_rating.png","img/elo_rating_resize.png","img/scholars_mate.png","second.bib","second_files/anchor-4.2.2/anchor.min.js","second_files/bowser-1.9.3/bowser.min.js","second_files/distill-2.2.21/template.v2.js","second_files/figure-html5/unnamed-chunk-2-1.png","second_files/jquery-1.11.3/jquery.min.js","second_files/popper-2.6.0/popper.min.js","second_files/tippy-6.2.7/tippy-bundle.umd.min.js","second_files/tippy-6.2.7/tippy-light-border.css","second_files/tippy-6.2.7/tippy.css","second_files/tippy-6.2.7/tippy.umd.min.js","second_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["fifth.bib","fifth_files/anchor-4.2.2/anchor.min.js","fifth_files/bowser-1.9.3/bowser.min.js","fifth_files/distill-2.2.21/template.v2.js","fifth_files/header-attrs-2.14/header-attrs.js","fifth_files/jquery-3.6.0/jquery-3.6.0.js","fifth_files/jquery-3.6.0/jquery-3.6.0.min.js","fifth_files/jquery-3.6.0/jquery-3.6.0.min.map","fifth_files/popper-2.6.0/popper.min.js","fifth_files/tippy-6.2.7/tippy-bundle.umd.min.js","fifth_files/tippy-6.2.7/tippy-light-border.css","fifth_files/tippy-6.2.7/tippy.css","fifth_files/tippy-6.2.7/tippy.umd.min.js","fifth_files/webcomponents-2.0.0/webcomponents.js","img/kolm_k_width.jpg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2073,7 +2099,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2093,7 +2119,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"What does elo measure?","description":"A definition of elo rating. An analysis of a chess game of mine. An inaugural \nentry in an amateur chess diary, if you will.","authors":[{"author":"James Carzon","authorURL":"https://jamescarzon.github.io/","affiliation":"Carnegie Mellon University","affiliationURL":"http://www.stat.cmu.edu/","orcidID":""}],"publishedDate":"2021-08-16T00:00:00.000-04:00","citationText":"Carzon, 2021"}
+{"title":"From Gauss to Kolmogorov","description":"A digest of the paper ``From Gauss to Kolmogorov: Localized measures of \ncomplexity for ellipses'' by Yuting Wei, Billy Fang, and Martin Wainwright \n(EJS, 2020).","authors":[{"author":"James Carzon","authorURL":"https://jamescarzon.github.io/","affiliation":"Carnegie Mellon University","affiliationURL":"http://www.stat.cmu.edu/","orcidID":""}],"publishedDate":"2023-06-04T00:00:00.000-04:00","citationText":"Carzon, 2023"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2116,73 +2142,286 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>What does elo measure?</h1>
+<h1>From Gauss to Kolmogorov</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A definition of elo rating. An analysis of a chess game of mine. An inaugural entry in an amateur chess diary, if you will.</p></p>
+<p><p>A digest of the paper ``From Gauss to Kolmogorov: Localized measures of
+complexity for ellipses’’ by Yuting Wei, Billy Fang, and Martin Wainwright
+(EJS, 2020).</p></p>
 </div>
 
 <div class="d-byline">
   James Carzon <a href="https://jamescarzon.github.io/" class="uri">https://jamescarzon.github.io/</a> (Carnegie Mellon University)<a href="http://www.stat.cmu.edu/" class="uri">http://www.stat.cmu.edu/</a>
   
-<br/>08-16-2021
+<br/>06-04-2023
 </div>
 
 <div class="d-article">
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/elo_rating_resize.png" width="100%" style="display: block; margin: auto;" /></p>
+
 </div>
-<p>It is imperative that you establish your chess skill level as soon as possible. There is simply too much at stake to live your 21st century life in tactical darkness. If you seriously think that you can walk around inside this world with nothing but the minimal knowledge of how the pieces move and still hold your head high at night, then you’ve already lost. Mark my words, you will be the one left sitting on the curb outside Pizza Hut with your confidence shattered and your carpal tunnels throbbing while a confederacy of twelve-year-olds will be standing around you with their hands making knight-jump-shapes on their acne-ridden foreheads. There is no coming back from this disaster.</p>
-<p>As a kid, I did not believe myself to be mathematically competent, and I assumed that good play of chess required some sort of talent for calculation. When I started playing chess in college, I marvelled at my opponents’ good fortune. I thought to myself as I lost time and again, <em>I’d done nothing wrong! I traded pieces for pieces, I didn’t walk into check, and I kept my queen next to my king! How could I have lost?</em></p>
-<p>The circumstances of the COVID-19 pandemic kindled a change in my attitude about the game. I found it to be an opportune activity to share remotely with my friends and a skill in which I was certainly capable of improving. The practice of learning to play better chess (as opposed to the practice itself of playing chess) is very satisfying now, because I no longer embarrass myself and have a renewed admiration for my ability to cling to mediocrity in a broad range of skills in which most people either find great success or total disdain.</p>
-<p>This post is a reflection of my current state in the hobby of online chess. As an educational exercise and for curious readers, I want to document my thought process qualitatively a little. Additionally, in the interest of learning more about how my progress is measured, I investigate the “elo rating.” This investigation I share with you now.</p>
-<h1 id="elo-as-proxy">Elo as proxy</h1>
-<p>It would be convenient to know your genuine world ranking in chess like how you know your height, but you can’t practically determine such a thing. The only way to decide how good people really are is to make everyone play against everyone else infinitely many times and then line up in such a way that no one is standing behind someone against whom they win more than half of the time. But such a tournament is impractical since we would not have anyone to wash our clothes or to clean after the horses on Mackinac Island, and so we will never know how good we really are.</p>
-<p>But it is rather obvious that we may guess how good we are at the game, and to guess with improving certainty with more and more play, without ever actually measuring skill. To have a good guess, let’s just order everyone that you’ve played against according to your win percentage against them. You can stand in front of the people against whom you normally win, but you must stand behind those who beat you. How good is the person standing in front of you? And behind? Average their true rankings to approximate your own.</p>
-<p>Of course, this solution is no good since your opponents don’t know their true rankings either. Furthermore, it may be the case that two players against whom you consider yourself equally ranked do not consider themselves equally ranked, so this program of ordering everyone may be poorly defined.</p>
-<p>In order to make up numbers to represent skill level, the elo rating system depends on the simple premise that a player’s true ability is not perfectly represented in any one game. Sometimes they play better than average and other times they play worse. Then, for example, if they are supposedly at rating <span class="math inline">\(X\)</span> and they are winning frequently against players of ratings greater than <span class="math inline">\(X\)</span>, then this is a sign that their rating is underestimated and should be increased. Usually, a player’s performance is assumed to respect a curve that looks like the following graph.</p>
+<p>Much can be said of the Gaussian
+and Rademacher width objects. At a high level, the width of a set carries
+information about how complicated that set is and, in turn, how complicated it
+is to estimate a parameter which is one among many members of that set. Methods for bounding the width of a set have been extensively studied.</p>
+<p>We will consider a localized notion of Gaussian width. At a high level, one
+may reason that the performance of a non-parametric estimation procedure should
+not be evaluated based on its ability to distinguish the truth from remote
+alternatives – what really matters is its ability to distinguish the truth
+from nearby alternatives which are more likely to be confused for the truth.
+If this intuition guides toward tighter estimation rates when using local
+notions of width, then we are motivated to find easy means of estimating the
+local Gaussian width of a set about a point. A result of this kind is the
+subject of a paper by Yuting Wei, Billy Fang, and Martin Wainwright (2020,
+<span class="citation" data-cites="wei_gauss_2020">(<a href="#ref-wei_gauss_2020" role="doc-biblioref">Wei, Fang, and J. Wainwright 2020</a>)</span>).</p>
+<p>The basic idea is the following. There is some minimal dimension
+<span class="math inline">\(k_*\in\{1,2,\ldots,d\}\)</span> for which <span class="math inline">\(d\)</span>-dimensional data are approximated
+locally by a <span class="math inline">\(k_*\)</span>-dimensional plane to <span class="math inline">\(\delta\)</span>-accuracy. Then when the data
+are sufficiently regular in some sense, we can say that the local Gaussian
+width within a <span class="math inline">\(\delta\)</span>-ball is the same as <span class="math inline">\(\delta\sqrt{k_*}\)</span> up to some
+universal constant. However, while Gaussian width is hard to compute, it is
+fairly easy to find <span class="math inline">\(k_*\)</span>. Thus this result is quite concise and useful.</p>
+<p>This report is organized as follows. We state all of the definitions that we
+need to make rigorous statements of the above ideas in
+<a href="#background">background</a>. Then we state
+the results of the paper and their most immediate consequences in
+<a href="#results">results</a>. We prove the first theorem in <a href="#proofs">proofs</a>, and we
+sketch the proof of the second (omitting a full proof which occupies five pages
+in our paper of interest). Finally, we summarize the entire report with the
+central idea and its consequences once again in <a href="#discussion">discussion</a>.</p>
+<h2 id="background">Background</h2>
+<p>Again, the <em>Gaussian width</em> of a set is some notion of its size or, roughly,
+the difficulty of an estimation problem over it.</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="second_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-2" class="definition"><strong>Definition 1  (Gaussian width) </strong></span>We define the <em>Gaussian width</em> of a set <span class="math inline">\(S\subset\mbox{$\mathbb{R}$}^d\)</span> as
+<span class="math display">\[\begin{align*}
+    \mbox{$\mathcal{G}$}(S) &amp;:= \mbox{$\mathbb{E}$}\left[\underset{u\in S}{\sup} \langle u, w\rangle\right]. &amp;&amp; \left(w\sim N(0, I_d)\right)
+\end{align*}\]</span>
+[Section 2.1 in <span class="citation" data-cites="wei_gauss_2020">(<a href="#ref-wei_gauss_2020" role="doc-biblioref">Wei, Fang, and J. Wainwright 2020</a>)</span>]</p>
 </div>
-<p>This curve is of an “extreme value distribution,” also known as the Gumbel distribution. That is, it is a curve which shows the theoretical <em>distribution of values</em> of the <em>maximum values</em> of <em>data samples</em> which, in turn, are samples from some <em>other distribution</em>. A classic use case might be the following. Suppose a river runs through your property and you would like to know if the river is likely to rise enough to spill over your garden. You may know how high the river ran every day for the last ten years, but the only information that is relevant to you is the maximum height this year. Taking the maximum heights observed in each of the previous ten years as your data sample, you can compute their average and their standard deviation to find a Gumbel distribution which describes the probabilities of different ranges of river heights.</p>
-<p>It is probably not true that anyone’s chess performance respects the Gumbel distribution. One could draw lots of other curves which would be just as believable descriptions of performance. However, the Gumbel distribution is a convenient choice for the purposes of a few calculations.</p>
-<p>If I tell you that GM Autobus’ play is distributed like Gumbel random variable <span class="math inline">\(A\)</span>, with mean play at rating <span class="math inline">\(2550\)</span>, and FM Bindowcleaner’s play is distributed like <span class="math inline">\(B\)</span>, with mean play at <span class="math inline">\(2150\)</span>, then we should have the expectation that Autobus will beat Bindowcleaner fairly frequently. For the sake of making up some point of reference to explain how big this difference in rating is in terms of winning percentage, we decide as convention that a <span class="math inline">\(+400\)</span> rating difference translates to probable winning odds of <span class="math inline">\(10:1\)</span>. So Autobus should be able to score 10 out of 11 points in an 11 game match against Bindowcleaner. In notation, write</p>
-<p><span class="math display">\[\frac{Pr(A\text{ beats }B)}{Pr(B\text{ beats }A)} = 10^{\frac{R_A-R_B}{400}}.\]</span></p>
-<p>On the left is denoted the odds of a random variable pretending to be Autobus playing at a higher level than a random variable pretending to be Bindowcleaner. To say that “<span class="math inline">\(A\)</span> beats <span class="math inline">\(B\)</span>” is to say that <span class="math inline">\(A\)</span> takes a number value higher than <span class="math inline">\(B\)</span>. On the right is an expression of those odds in terms of assumed rating; if the difference <span class="math inline">\(R_A-R_B\)</span> is equal to <span class="math inline">\(+400\)</span>, then the righthand expression evaluates to <span class="math inline">\(10\)</span>. If <span class="math inline">\(R_A-R_B=+800\)</span>, then the righthand expression evaluates to <span class="math inline">\(100\)</span>. This makes sense. If Stockfish 14, the chess playing machine, has an assumed rating of <span class="math inline">\(2950\)</span>, then it should beat Autobus with odds 10 to 1. If it then faced off against Bindowcleaner, then it could do the following. It could say, “Hey GM Autobus! Why don’t you play 101 games for me against Bindowcleaner? If you win, then we’ll just say that I would have also won that game since I generally play better than you do. If you lose, however, then I will play the rematch against Bindowcleaner myself. Since I play better than you in 10 out of 11 games on average, I expect to be able to win 10 out of 11 of those 11 games that you are expected to lose to Bindowcleaner, thus preserving my legacy.” Ignoring the ethical difficulty of convincing a human to play for a computer, much less 101 games, the takeaway is that this equation describes the scenario which we have sought to describe.</p>
-<p>Let us algebraically extract some new information. Since it is vanishingly unlikely for <span class="math inline">\(A\)</span> to equal <span class="math inline">\(B\)</span> from a probability perspective, we will simply observe that <em>either</em> <span class="math inline">\(A\)</span> beats <span class="math inline">\(B\)</span> or <span class="math inline">\(B\)</span> beats <span class="math inline">\(A\)</span> in our scenario. Ignore draws. Then</p>
-<p><span class="math display">\[Pr(A\text{ beats }B)+Pr(B\text{ beats }A)=100\%=1,\]</span></p>
-<p>so</p>
-<p><span class="math display">\[Pr(B\text{ beats }A)=1-Pr(A\text{ beats }B).\]</span></p>
-<p>Combining this with the first equation, we solve for <span class="math inline">\(Pr(A\text{ beats }B)\)</span> to obtain</p>
-<p><span class="math display">\[Pr(A\text{ beats }B) = \frac{1}{1+10^{\frac{R_B-R_A}{400}}}.\]</span></p>
-<p>Conveniently, this expression is related to our assumption that one’s chess performance follows a sort of curve like the Gumbel curve. The Gumbel curve is the graph of a function like</p>
-<p><span class="math display">\[f(x) = \frac{1}{\beta}e^{-\left(\frac{x-\mu}{\beta}+e^{\frac{x-\mu}{\beta}}\right)},\]</span></p>
-<p>where the number <span class="math inline">\(\mu\)</span> determines where the curve is centered and the number <span class="math inline">\(\beta\)</span> determines the horizontal scale. Let us take it as a fact now that if two random variables <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> follow Gumbel distributions with the same scale number <span class="math inline">\(\beta\)</span>, then the random variable <span class="math inline">\(B-A\)</span> is a random variable with a logistic distribution, meaning that it has a distribution defined by the function</p>
-<p><span class="math display">\[g(x) = \frac{e^{-\frac{x-\mu*}{\beta}}}{\beta\left(1+e^{-\frac{x-\mu*}{\beta}}\right)^2},\]</span></p>
-<p>where <span class="math inline">\(\mu*\)</span> is the center of the curve showing the distribution of <span class="math inline">\(B-A\)</span>. If we perform a clever calculus calculation, then we can obtain</p>
-<p><span class="math display">\[Pr(B-A\le x) = \int_{-\infty}^{x}f(y)dy = \frac{1}{1+e^{-\frac{x-\mu*}{\beta}}}.\]</span></p>
-<p>This function, this particular probability, is a function which looks similar to our expression for <span class="math inline">\(Pr(A\text{ beats }B)\)</span>.</p>
-<p>In particular, if <span class="math inline">\(\mu_*=R_A-R_B\)</span> and <span class="math inline">\(\beta=\frac{400}{\log 10}\)</span>, then</p>
-<p><span class="math display">\[P(A\text{ beats }B) = P(B-A\leq 0) = \frac{1}{1+e^{\left[-\frac{R_B-R_A}{\frac{400}{\log 10}}\right]}} = \frac{1}{1+10^{-\frac{R_B-R_A}{400}}}.\]</span></p>
-<p>This calculation is repeated from Arthur Berg’s explanation in <em>Chance</em> <span class="citation" data-cites="Berg2020">(Berg <a href="#ref-Berg2020" role="doc-biblioref">2020</a>)</span>. So it seems that this probability model for chess play is somehow justified by the convenience of this calculation. If we pretend that one’s performance follows this Gumbel curve, then we can say that the odds seen in games are structured in the way described concretely above: a <span class="math inline">\(+400\)</span> rating difference translates to expected <span class="math inline">\(10:1\)</span> odds of winning. To conclude, Elo doesn’t measure chess ability or ranking, but it is a somewhat sophisticated guess as to one’s relative winning odds against another player.</p>
-<h1 id="dont-trot-out-the-queen">Don’t trot out the queen</h1>
-<p>Understanding the technical definition of chess rating has not been practically helpful for playing better chess in my experience, but I have learned a few things about how to adjust my play to opponents of different ratings. For example, I recognized early on in my career as an amateur that low rated players are forever begging to trick someone into falling for the “Scholar’s Mate.” Something like this is what they have in mind:</p>
+</div>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/scholars_mate.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-3" class="definition"><strong>Definition 2  (Localized Gaussian width) </strong></span>The <em>localized Gaussian width</em> of <span class="math inline">\(S\)</span> at <span class="math inline">\(u^*\in S\)</span> and scale <span class="math inline">\(\delta\)</span> is
+simply <span class="math inline">\(\mbox{$\mathcal{G}$}\left((S-u^*)\cap\mbox{$\mathbb{B}$}(\delta)\right)\)</span>, where <span class="math inline">\(S-u^*\)</span> is the
+translation of <span class="math inline">\(S\)</span> so that <span class="math inline">\(u^*\)</span> coincides with the origin and <span class="math inline">\(\mbox{$\mathbb{B}$}(\delta)\)</span> is
+an <span class="math inline">\(\ell_2\)</span> ball of radius <span class="math inline">\(\delta\)</span>. [Section 3.1 in <span class="citation" data-cites="wei_gauss_2020">(<a href="#ref-wei_gauss_2020" role="doc-biblioref">Wei, Fang, and J. Wainwright 2020</a>)</span>]</p>
 </div>
-<p>It’s a quick and annoying loss for the poor soul who doesn’t see it coming. However, in order to achieve this trick, you have to breach a generally true rule: you have to develop our queen piece early. This is typically a bad idea because it is easy for your opponent to simultaneously get their pieces into the center of the board while also attacking your queen. As you run the queen away over and over again, your other pieces don’t move and you end up falling behind. For this reason, it’s better to move your other pieces out before the queen.</p>
-<p>I think that it is at or around the 1000 elo rating in online chess play that everyone is smart enough not to try using the Scholar’s Mate as an old, reliable tool. Similar patterns do emerge sometimes. As an example that I may pleasantly share, I submit for your consideration the following game that I played against an opponent by the handle “PunisherFevzican9.”</p>
-<iframe src="https://lichess.org/embed/0Hxq5ZmB#35?theme=auto&amp;bg=auto" width="600" height="397" frameborder="0">
-</iframe>
-<p>The initial move 1. … c5 is the Sicilian Defense. Up to 4. Bc4, this game is a common position, but with 4. … f6 the database on Lichess.org is exhausted. This pawn push is considered a mistake because it allows me to break into the center, but it was not obvious to either of us in that moment. I just happened to play the best move next.</p>
-<p>We trade pieces in the center on d4 until 7. Qxd4. Now my queen is developed and easily be attacked, and so comes 7. … d5. Unfortunately for my opponent, this gives me the option to attack the vacated f7 square with a bishop-queen battery, almost like how the Scholar’s Mate looks, except now my queen can’t be dislodged. All the pawns are too far advanced. I play 8. Qd5, eying f7. Then 8. … Qe7 defends that square, so I bring my knight to b5, now getting ready to fork the king and rook or maybe just help in the attack. The black queen now runs around trying to find something dangerous to do but can’t figure anything out. With 13. Qxe7+, I trade queens, thinking that I have a strong enough attack without the queens on the board to checkmate soon.</p>
-<p>At this point I spend some time looking for a possible checkmate pattern. I saw that the king had two squares to move to: c7 and e8. If I could hold the king in place, then that would make it hard for black to develop the bishop on c8 that’s stuck behind two pawns and, thus, the rooks stuck inside their own caves.</p>
-<p>With 14. Rd1, I enable one more piece to participate. Trading a knight and bishop, black makes some room, but this is a distraction from my own plan. As black plays 16. … Ne7, the king is once again limited to the squares c7 and e8, and my bishops are perfectly set up to close these off. 17. Bf7 covers e8. Black simply looks at the bishop with 17. … Rf8. Then 18. Bb6 is mate.</p>
-<p>I did not play an excellent game. Many moments of this attack were refutable. For example, if after 17. Bf7 the black king moved to c7, I would have been a bit stuck. However, this was a fast game, played with 5 minutes plus 3 second increments on each move, so my opponent didn’t necessarily have a chance to calculate my plan at each turn. The lesson that I learned from this game is that an aggressive attack can work, even against players who are familiar with some tricks, if the attacking plan is specific and coordinated with the right mistakes made by your opponent. So don’t just trot out the queen! Let your attacks be sound and games be exciting.</p>
+</div>
+<p>That is, it is the Gaussian width not of the whole of set <span class="math inline">\(S\)</span> but is the width
+of the subset of <span class="math inline">\(S\)</span> which contains those points which are within <span class="math inline">\(\ell_2\)</span>
+distance <span class="math inline">\(\delta\)</span> from <span class="math inline">\(u^*\)</span>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="definition">
+<p><span id="def:unnamed-chunk-4" class="definition"><strong>Definition 3  (Kolmogorov width) </strong></span>We define the Kolmogorov <span class="math inline">\(k\)</span>-width of <span class="math inline">\(S\)</span> as
+<span class="math display">\[\begin{equation}
+    W_k(S) := \underset{\Pi_k}{\min}\text{ }\underset{u\in S}{\max} \left\lVert u - \Pi_k u\right\rVert_2,
+\end{equation}\]</span>
+where the <span class="math inline">\(\Pi_k\)</span> are <span class="math inline">\(k\)</span>-dimensional orthogonal linear projections. [Section 2.2 in <span class="citation" data-cites="wei_gauss_2020">(<a href="#ref-wei_gauss_2020" role="doc-biblioref">Wei, Fang, and J. Wainwright 2020</a>)</span>]</p>
+</div>
+</div>
+<p>In words, the <span class="math inline">\(k\)</span>-width of <span class="math inline">\(S\)</span> is the maximum reconstruction error after
+projecting <span class="math inline">\(S\)</span> onto the best-approximating <span class="math inline">\(k\)</span>-dimensional subspace. It happens
+that, in the case where <span class="math inline">\(S\)</span> is a space from which samples are observed, the
+problem of estimating the best projection <span class="math inline">\(\Pi_k\)</span> is the same problem as
+computing the <span class="math inline">\(k\)</span> first principal components of the data set. See Figure
+<a href="#fig:kolm-k-width">1</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:kolm-k-width"></span>
+<img src="img/kolm_k_width.jpg" alt="Intersecting an ellipse $S$ and a $\delta$-ball around $u^*\in S$, find the projection $\Pi_k$ which has the minimax reconstruction error over $S\cap \BB(\delta)$. That error is the local Kolmogorov $k$-width of $S$ for $u^*$" width="100%" />
+<p class="caption">
+Figure 1: Intersecting an ellipse <span class="math inline">\(S\)</span> and a <span class="math inline">\(\delta\)</span>-ball around <span class="math inline">\(u^*\in S\)</span>, find the projection <span class="math inline">\(\Pi_k\)</span> which has the minimax reconstruction error over <span class="math inline">\(S\cap \mbox{$\mathbb{B}$}(\delta)\)</span>. That error is the local Kolmogorov <span class="math inline">\(k\)</span>-width of <span class="math inline">\(S\)</span> for <span class="math inline">\(u^*\)</span>
+</p>
+</div>
+</div>
+<p>Clearly if <span class="math inline">\(k=d\)</span> the dimension of the ambient space, then there is only one
+projection to consider (which is the identity projection) and ensures that
+<span class="math inline">\(W_d(S)=0\)</span>. On the other hand, if <span class="math inline">\(k=0\)</span>, then once again there is only one
+projection to consider (which is the origin alone) and
+<span class="math inline">\(W_0(S)=\max_{\theta\in S}\left\lVert\theta\right\rVert_2\)</span>. Furthermore, we have that
+<span class="math display">\[\begin{align*}
+    W_{k-1}(S) &amp;\geq W_{k}(S). &amp;&amp; (k=1\ldots,d)
+\end{align*}\]</span>
+In words, the Kolmogorov <span class="math inline">\(k\)</span>-width decreases as the subspaces with which we
+approximate <span class="math inline">\(S\)</span> increase in dimension; this fact is tedious to prove but
+intuitive enough and useful later.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="definition">
+<p><span id="def:unnamed-chunk-5" class="definition"><strong>Definition 4  (Critical dimension) </strong></span>Pick <span class="math inline">\(\delta&gt;0\)</span> and <span class="math inline">\(\eta\in(0, 0.1)\)</span>. The critical dimension of <span class="math inline">\(S\)</span> for <span class="math inline">\(u^*\)</span>
+is
+<span class="math display">\[\begin{equation}
+    k_*(u^*, \delta) := \min\left\{k\in\{1,2,\ldots,d\} :  W_k\left((S-u^*)\cap\mbox{$\mathbb{B}$}((1-\eta)\delta)\right) \leq 0.9\delta\right\}.
+\end{equation}\]</span>
+[Equation 8 in <span class="citation" data-cites="wei_gauss_2020">(<a href="#ref-wei_gauss_2020" role="doc-biblioref">Wei, Fang, and J. Wainwright 2020</a>)</span>]</p>
+</div>
+</div>
+<p>As was suggested in <a href="#intro">intro</a>, this quantity can be considered the minimal
+dimension for which there exists a <span class="math inline">\(k_*\)</span>-dimensional projection that
+approximates a neighborhood of <span class="math inline">\(S\)</span> around <span class="math inline">\(u^*\)</span> to <span class="math inline">\(0.9\delta\)</span>-accuracy. In the
+case where <span class="math inline">\(S\)</span> is a space from which samples are observed, <span class="math inline">\(k_*\)</span> may be
+considered the minimum number of the top principal components of the dataset
+needed to capture <span class="math inline">\(1-0.9\delta\)</span> times the total variation in the data in the
+<span class="math inline">\(\ell_2\)</span> sense.</p>
+<p>Note that here we consider <span class="math inline">\(0.9\delta\)</span>-accuracy rather than simply
+<span class="math inline">\(\delta\)</span>-accuracy for the reason that we can only expect the latter in the case
+of <span class="math inline">\(k_*=d\)</span>, an uninteresting case. Instead we are much more interested in a
+small dimension at which we attain a reasonable representation of our set. We
+could alternatively pick <span class="math inline">\(\eta\in(0,t)\)</span> and pursue a <span class="math inline">\((1-t\delta)\)</span>-accurate
+<span class="math inline">\(k_*\)</span>-dimensional subspace for <span class="math inline">\(0&lt;t&lt;0.5\)</span>, say, but while toggling the parameter
+<span class="math inline">\(t\)</span> in this way may lead to interestingly different results in practice, the
+argument follows the same anyhow.</p>
+<p>For the motivating examples of the paper, the set <span class="math inline">\(S\)</span> is a finite-dimensional
+ellipse <span class="math inline">\(\mbox{$\mathcal{E}$}^*_{\mu}\)</span> which is defined as a ball
+<span class="math inline">\(\mbox{$\mathbb{B}$}(\theta^*; 1, \left\lVert\cdot\right\rVert_{\mu})\)</span> around <span class="math inline">\(\theta^*\)</span> and of radius <span class="math inline">\(1\)</span>,
+where
+<span class="math display">\[\begin{align*}
+    \left\lVert\theta\right\rVert_{\mu} = \sum_{i=1}^d \frac{\theta_j^2}{\mu_j}. &amp;&amp; (\mu_1\geq\mu_2\geq\cdots\geq\mu_d\geq 0)
+\end{align*}\]</span>
+We may ask how the difficulty of reconstructing <span class="math inline">\(\mbox{$\mathcal{E}$}^*_{\mu}\)</span> with the
+projection <span class="math inline">\(\pi_k\)</span> relates to the difficulty of reconstructing another ellipse
+<span class="math inline">\(\mbox{$\mathcal{E}$}^*_{\gamma}\)</span> (which is similarly defined).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="definition">
+<p><span id="def:setgamma" class="definition"><strong>Definition 5  </strong></span>Consider the set
+<span class="math display">\[\begin{equation*}
+    \Gamma(\delta, \Pi_k) := \left\{\gamma\in\mbox{$\mathbb{R}$}_{+}^d : \underset{\left\lVert\Delta\right\rVert_{\mu}\leq \delta}{\sup}\left\lVert\Delta-\Pi_k\Delta\right\rVert_{\gamma}^2\leq 1\right\}
+\end{equation*}\]</span>
+of all points <span class="math inline">\(\gamma\)</span> which furnish ellipses for which the reconstruction error for all <span class="math inline">\(\Delta\in\mbox{$\mathcal{E}$}^*_{\mu}\)</span> is small.</p>
+</div>
+</div>
+<p>It is in terms of this set that we state our ``regularity conditions’’ for our central claim below.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="definition">
+<p><span id="def:regularity" class="definition"><strong>Definition 6  </strong></span>If, of the ellipse <span class="math inline">\(\mbox{$\mathcal{E}$}^*_{\mu}\)</span>, we can say that
+<span class="math display">\[\begin{equation}
+    \delta\sqrt{k_*(\delta, \theta^*)} \gtrsim \underset{\gamma\in\Gamma(\delta,\Pi_{k_*})}{\inf} \sqrt{\sum_{j=1}^d \gamma_j},
+\end{equation}\]</span>
+then we say that <span class="math inline">\(\mbox{$\mathcal{E}$}^*_{\mu}\)</span> is regular at <span class="math inline">\(\theta^*\)</span>.</p>
+</div>
+</div>
+<p>The premise of the paper is, again, as follows. If, of the ellipse <span class="math inline">\(\mbox{$\mathcal{E}$}^*_{\mu}\)</span>, we can say that it is regular at <span class="math inline">\(\theta^*\)</span>, then the local Gaussian complexity of <span class="math inline">\(\mbox{$\mathcal{E}$}^*_{\mu}\)</span> satisfies
+<span class="math display" id="eq:centralclaim">\[\begin{equation}
+    \mbox{$\mathcal{G}$}\left(\mbox{$\mathcal{E}$}^*_{\mu}\cap\mbox{$\mathbb{B}$}(\delta)\right) \simeq \delta\sqrt{k_*(\theta^*, \delta)}.
+    \tag{1}
+\end{equation}\]</span>
+To show Claim <a href="#eq:centralclaim">(1)</a>, we require an upper bound and a lower bound on the local Gaussian complexity. The upper bound is the subject of Theorem <a href="#thm:upperbound">1</a>. The lower bound is the subject of Theorem <a href="#thm:lowerbound">2</a>.</p>
+<h2 id="results">Main results</h2>
+<p>Toward the statement of a result of the form of equation , the authors offer an upper bound and a lower bound on the local Gaussian complexity of the ellipse. These are stated as follows.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="theorem">
+<p><span id="thm:upperbound" class="theorem"><strong>Theorem 1  (Upper bound) </strong></span>Given <span class="math inline">\(\delta&gt;0\)</span>, a tuple <span class="math inline">\((k, \Pi_k)\)</span>, and some <span class="math inline">\(\theta^*\in\mbox{$\mathcal{E}$}\)</span>,
+<span class="math display">\[\begin{equation*}
+    \mbox{$\mathcal{G}$}\left(\mbox{$\mathcal{E}$}^*_{\mu}\cap\mbox{$\mathbb{B}$}(\delta)\right) \leq \delta\sqrt{k} + \underset{\gamma\in\Gamma(\theta^*,\delta,\Pi_k)}{\inf} \sqrt{\sum_{j=1}^d \gamma_j}.
+\end{equation*}\]</span>
+[Theorem 1 in <span class="citation" data-cites="wei_gauss_2020">(<a href="#ref-wei_gauss_2020" role="doc-biblioref">Wei, Fang, and J. Wainwright 2020</a>)</span>]</p>
+</div>
+</div>
+<p>The proof of this theorem is reconstructed in the <a href="#proofs">proofs</a> section.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="theorem">
+<p><span id="thm:lowerbound" class="theorem"><strong>Theorem 2  (Lower bound) </strong></span>There exist universal constants <span class="math inline">\(c_1, c_2 &gt; 0\)</span> such that for all <span class="math inline">\(\theta^*\in\mbox{$\mathcal{E}$}\)</span>,
+<span class="math display">\[\begin{equation*}
+    \mbox{$\mathcal{G}$}\left(\mbox{$\mathcal{E}$}^*_{\mu}\cap\mbox{$\mathbb{B}$}(\delta)\right) \geq c_1\delta\sqrt{1-\left\lVert\theta^*\right\rVert_{\mbox{$\mathcal{E}$}}^2}\sqrt{k_*(\theta^*, \delta)}
+\end{equation*}\]</span>
+for all <span class="math inline">\(\delta\in\left(0,c_2\Phi^{-1}\left((\left\lVert\theta^*\right\rVert_{\mbox{$\mathcal{E}$}}^{-1}-1)^2\right)\right)\)</span>. [Theorem 2 in <span class="citation" data-cites="wei_gauss_2020">(<a href="#ref-wei_gauss_2020" role="doc-biblioref">Wei, Fang, and J. Wainwright 2020</a>)</span>]</p>
+</div>
+</div>
+<p>The proof of this theorem is sketched in <a href="#proofs">proofs</a>. Now we restate equation  formally.</p>
+<p>The lower bound in this theorem is immediate from . The upper bound can be drawn quickly from  by simply noting that when the</p>
+<p>To further illustrate the use of the above result, the following theorem assures the reasonable scaling of the critical dimension with <span class="math inline">\(\delta\)</span> and and the ease with which it is approximately computed.</p>
+<h2 id="proofs">Proofs and sketches</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="proof">
+<p><span id="unlabeled-div-1" class="proof"><em>Proof</em> (Proof of upper bound). </span>For <span class="math inline">\(\Delta\in\mbox{$\mathcal{E}$}^*_{\mu}\cap\mbox{$\mathbb{B}$}(\delta)\)</span> and <span class="math inline">\(\Pi_k\)</span> a <span class="math inline">\(k\)</span>-dimensional orthogonal projection, write <span class="math inline">\(\Delta=\Pi_k\Delta + (\Delta-\Pi_k\Delta)\)</span>. Then
+<span class="math display">\[\begin{align*}
+    \mbox{$\mathcal{G}$}\left(\mbox{$\mathcal{E}$}^*_{\mu}\cap\mbox{$\mathbb{B}$}(\delta)\right) &amp;= \mbox{$\mathbb{E}$}\left[\underset{\Delta\in \mbox{$\mathcal{E}$}^*_{\mu}\cap\mbox{$\mathbb{B}$}(\delta)}{\sup} \langle w,\Delta\rangle\right]\\
+        &amp;\leq \underset{T_1}{\underbrace{\mbox{$\mathbb{E}$}\left[\underset{\Delta}{\sup} \langle w,\Pi_k\Delta\rangle\right]}} + \underset{T_2}{\underbrace{\mbox{$\mathbb{E}$}\left[\underset{\Delta}{\sup} \langle w,\Delta-\Pi_k\Delta\rangle\right]}},
+\end{align*}\]</span>
+leaving the task to bound the terms <span class="math inline">\(T_1\)</span> and <span class="math inline">\(T_2\)</span> separately.</p>
+<p>(Bounding <span class="math inline">\(T_1\)</span>.) Write
+<span class="math display">\[\begin{align*}
+    \mbox{$\mathbb{E}$}\left[\underset{\Delta}{\sup} \langle w,\Pi_k\Delta\rangle\right] &amp;= \mbox{$\mathbb{E}$}\left[\underset{\Delta}{\sup} \langle \Pi_k w,\Pi_k\Delta\rangle\right] &amp;&amp; ((I-\Pi_k)w\perp \Pi_k\Delta)\\
+        &amp;\leq \underset{\Delta}{\sup}\left\lVert\Pi_k\Delta\right\rVert_2 \mbox{$\mathbb{E}$}\left\lVert\Pi_k w\right\rVert_2 &amp;&amp; (Cauchy-Schwarz)\\
+        &amp;\leq \delta \sqrt{k}
+\end{align*}\]</span>
+using the fact that <span class="math inline">\(\left\lVert\Delta\right\rVert_2\leq \delta\)</span> by definition and that
+<span class="math display">\[\begin{align*}
+    \mbox{$\mathbb{E}$}\left\lVert\Pi_k w\right\rVert_2 &amp;\leq \sqrt{\sum_{i=1}^d \mbox{$\mathbb{E}$}(\Pi_k w)_i^2} &amp;&amp; (Jensen)\\
+        &amp;\leq \sqrt{\sum_{i=1}^d \mbox{$\mathbb{I}$}\left\{i\leq k\right\}}\\
+        &amp;= \sqrt{k}
+\end{align*}\]</span>
+since <span class="math inline">\(\Pi_k w\)</span> has the same distribution as a <span class="math inline">\(k\)</span>-dimensional standard Gaussian random variable projected up into <span class="math inline">\(d\)</span>-dimensional space and then rotated according to <span class="math inline">\(\Pi_k\)</span>.</p>
+<p>(Bounding <span class="math inline">\(T_2\)</span>.) Let <span class="math inline">\(A(\gamma)=\text{diag}(\sqrt{\gamma_1}, \sqrt{\gamma_2}, \ldots,\sqrt{\gamma_d}).\)</span> Then write
+<span class="math display">\[\begin{align*}
+    \mbox{$\mathbb{E}$}\left[\underset{\Delta}{\sup} \langle w,\Delta-\Pi_k\Delta\rangle\right] &amp;= \mbox{$\mathbb{E}$}\left[\underset{\Delta}{\sup} \langle Aw,A^{-1}(\Delta-\Pi_k\Delta)\rangle\right]\\
+        &amp;\leq \underset{\Delta}{\sup} \left\lVert A^{-1}(\Delta-\Pi_k\Delta)\right\rVert_2 \mbox{$\mathbb{E}$}\left\lVert Aw\right\rVert_2.
+\end{align*}\]</span>
+Of the first factor, note that for all <span class="math inline">\(\gamma\in\Gamma(\delta,\Pi_k)\)</span> we have
+<span class="math display">\[\begin{equation*}
+    \left\lVert A(\gamma)^{-1}(\Delta-\Pi_k\Delta)\right\rVert_2 = \left\lVert\Delta-\Pi_k\Delta\right\rVert_{\gamma}\leq 1
+\end{equation*}\]</span>
+for all <span class="math inline">\(\left\lVert\Delta\right\rVert_{\mu}\leq 1\)</span> by Definition .
+Of the second factor note that
+<span class="math display">\[\begin{align*}
+    \mbox{$\mathbb{E}$}\left\lVert Aw\right\rVert_2 &amp;\leq \sqrt{\sum_{i=1}^d \mbox{$\mathbb{E}$}(A w)_i^2} &amp;&amp; (Jensen)\\
+        &amp;= \sqrt{\sum_{i=1}^d \gamma_i}.
+\end{align*}\]</span>
+It follows that
+<span class="math display">\[\begin{equation*}
+    \mbox{$\mathbb{E}$}\left[\underset{\Delta}{\sup} \langle w,\Delta-\Pi_k\Delta\rangle\right] \leq \underset{\gamma\in\Gamma(\delta,\Pi_k)}{\inf}\sqrt{\sum_{i=1}^d \gamma_i}
+\end{equation*}\]</span>
+since the left-hand side does not depend on the <span class="math inline">\(\gamma\)</span>. Combining this result with the bound on <span class="math inline">\(T_1\)</span> concludes the proof for Theorem 1.</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="proof">
+<p><span id="unlabeled-div-2" class="proof"><em>Proof</em> (Sketch of proof of lower bound). </span>Consider two separate cases.</p>
+<p>(Case 1.) Suppose that <span class="math inline">\(\left\lVert\theta^*\right\rVert_{\mbox{$\mathcal{E}$}}\leq\frac12\)</span>. The first step toward the claim in this setting is to show that
+<span class="math display">\[\begin{equation*}
+    \mbox{$\mathcal{G}$}\left(\mbox{$\mathcal{E}$}^*_{\mu}\cap\mbox{$\mathbb{B}$}(\delta)\right) \geq \mbox{$\mathcal{G}$}\left(\mbox{$\mathbb{B}$}\left(\frac{3}{10}\delta\right)\cap E_{k`_*}\right),
+\end{equation*}\]</span>
+where <span class="math inline">\(E_k\subset\mbox{$\mathbb{R}$}^d\)</span> is the subspace spanned by <span class="math inline">\(\{e_1,\ldots,e_k\}\)</span> and <span class="math inline">\(k`_*\geq k_*\)</span>. In words, if <span class="math inline">\(\theta^*\)</span> is close to the center of the ellipse, then its associated local Gaussian complexity is bounded below by the local Gaussian complexity of a <span class="math inline">\(k`_*\)</span>-dimensional ball. It can be checked directly that the right-hand side of the above inequality is equal to <span class="math inline">\(\frac{3}{10}\delta\sqrt{k`_*}\)</span>, and by the assumption of this case we have that
+<span class="math display">\[\begin{equation*}
+    \frac{3}{10}\delta\sqrt{k`_*} \geq \frac{3}{10}\delta\sqrt{1-\left\lVert\theta^*\right\rVert_{\mbox{$\mathcal{E}$}}^2}\sqrt{k_*(\theta^*,\delta)},
+\end{equation*}\]</span>
+which is the result. What remains to be seen is that that inequality is in fact true. Loosely speaking, it is indeed true because the set intersection of the right-hand complexity expression is smaller than the set intersection of the left-hand complexity expression.</p>
+<p>(Case 2.) Suppose that <span class="math inline">\(\left\lVert\theta^*\right\rVert_{\mbox{$\mathcal{E}$}}\geq\frac12\)</span>. The gist of Lemmas 1 and 2 is that there exists a vector <span class="math inline">\(\theta^{\dagger}\in\mbox{$\mathcal{E}$}\)</span> and a packing
+<span class="math display">\[\begin{align*}
+    \Xi &amp;= \{\theta^{\dagger}+\sigma^S: S\in\mbox{$\mathcal{J}$}, \sigma^S \text{ $s$-sparse}\} \subset \mbox{$\mathcal{E}$},\text{ where}\\
+    \mbox{$\mathcal{J}$}&amp;\subset \mbox{$\mathcal{P}$}(\{\lfloor(k_*-1)/8\rfloor,\ldots,\lfloor(k_*-1)/4\rfloor\})\text{ and}\\
+    s &amp;:= \rho\frac{k_*-1}{16} &amp;&amp;(\rho\in(0,1))
+\end{align*}\]</span>
+such that
+<span class="math display">\[\begin{align*}
+    \lvert\Xi\rvert &amp;\geq \begin{pmatrix}
+        \lfloor\frac{k_*-1}{16}\rfloor \\
+        s
+    \end{pmatrix},\text{ and}\\
+    \delta^2 &amp;\leq \left\lVert\theta^S - \theta^*\right\rVert_2^2 \leq \left(\frac{4}{1-\left\lVert\theta^*\right\rVert_{\mbox{$\mathcal{E}$}}^2}\right)\delta^2.
+\end{align*}\]</span>
+All this is to obtain a (large but tractable) collection of vectors <span class="math inline">\(\Delta^S\in\mbox{$\mathcal{E}$}_{\theta^*}\cap\mbox{$\mathbb{B}$}(\delta)\)</span> proportional to <span class="math inline">\(\Tilde{\theta}-\theta^*\)</span> where <span class="math inline">\(\Tilde{\theta}\in\Xi\)</span> so that
+<span class="math display">\[\begin{equation}
+    \mbox{$\mathbb{E}$}\left[\underset{\Delta\in \mbox{$\mathcal{E}$}^*_{\mu}\cap\mbox{$\mathbb{B}$}(\delta)}{\sup} \langle w,\Delta\rangle\right] \geq \mbox{$\mathbb{E}$}\left[\underset{\Tilde{\theta}\in\Xi}{\max} \langle w,\Delta^S\rangle\right].
+\end{equation}\]</span>
+A further Lemma 3 takes the conditions for Theorem  and combines it with the result of Lemma 2 to show that the right-hand side of the above inequality is an upper bound for <span class="math inline">\(\delta\sqrt{1-\left\lVert\theta^*\right\rVert_{\mbox{$\mathcal{E}$}}^2}\sqrt{k_*}\)</span> up to some universal constant. The argument for this step is somewhat similar to the part of the Proof of Theorem 1 () in that one can observe that the sparsity of the <span class="math inline">\(\Delta^S\)</span> zero out <span class="math inline">\(d-k^*\)</span> entries of the Gaussian vector <span class="math inline">\(w\)</span> so that, by H"older, the <span class="math inline">\(\mbox{$\mathbb{E}$}\left\lVert w\right\rVert_{\infty}\)</span> looks like <span class="math inline">\(\sqrt{k_*}\)</span> and the <span class="math inline">\(\sup\left\lVert\Delta^S\right\rVert_1\)</span> looks like <span class="math inline">\(\delta\sqrt{1-\left\lVert\theta^*\right\rVert_{\mbox{$\mathcal{E}$}}^2}\)</span>. This is, as one would expect, a gross oversimplification of the details of the full proof.</p>
+</div>
+</div>
+<h2 id="discussion">Discussion</h2>
+The consequences of the results discussed in the body of this report are, as promised, quite immediate for estimation rates. The set-up of the relevant estimation problem is as follows. If <span class="math inline">\(\theta^*\in\mbox{$\mathcal{E}$}\)</span> an ellipse and some samples <span class="math inline">\(y\sim N(\theta^*, I_n)\)</span> are observed, then the least squares estimator
+<span class="math display">\[\begin{equation*}
+    \Hat{\theta} := \arg \underset{\theta\in\mbox{$\mathcal{E}$}}{\min} \left\lVert y-\theta\right\rVert_2^2
+\end{equation*}\]</span>
+enjoys the following property.
+<p>This result is quite similar to what we already know about the relation between global Gaussian width and least squares estimation rates on ellipses. This topic is discussed at length in <span class="citation" data-cites="j_wainwright_high-dimensional_2019">(<a href="#ref-j_wainwright_high-dimensional_2019" role="doc-biblioref">J. Wainwright 2019</a>)</span>.</p>
+<p>Can these results for bounding the local Gaussian width be imported to the question of bounding global Gaussian width? Not immediately can they be, but consider this. The hardest vector <span class="math inline">\(\theta^*\in\mbox{$\mathcal{E}$}\)</span> to estimate is the zero vector since this is where the ellipse is the ``widest,’’ and the critical dimension of the ellipse around <span class="math inline">\(0\)</span> is naturally going to be higher than the critical dimension anywhere else. Although <span class="math inline">\(\mbox{$\mathcal{G}$}(\mbox{$\mathcal{E}$}_0\cap\mbox{$\mathbb{B}$}(\delta))\)</span> is not exactly <span class="math inline">\(\mbox{$\mathcal{G}$}(\mbox{$\mathcal{E}$})\)</span>, the two help capture the minimax difficulty of the estimation problem over <span class="math inline">\(\mbox{$\mathcal{E}$}\)</span>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div id="refs" class="references" role="doc-bibliography">
-<div id="ref-Berg2020">
-<p>Berg, Arthur. 2020. “Statistical Analysis of the Elo Rating System in Chess.” <em>Chance Magazine</em>, September. <a href="https://chance.amstat.org/2020/09/chess/">https://chance.amstat.org/2020/09/chess/</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-j_wainwright_high-dimensional_2019" class="csl-entry" role="doc-biblioentry">
+J. Wainwright, Martin. 2019. <em>High-<span>Dimensional</span> <span>Statistics</span>: <span>A</span> <span>Non</span>-<span>Asymptotic</span> <span>Viewpoint</span></em>. Cambridge <span>Series</span> in <span>Statistical</span> and <span>Probabilistic</span> <span>Mathematics</span>. Cambridge University Press.
+</div>
+<div id="ref-wei_gauss_2020" class="csl-entry" role="doc-biblioentry">
+Wei, Yuting, Billy Fang, and Martin J. Wainwright. 2020. <span>“From <span>Gauss</span> to <span>Kolmogorov</span>: <span>Localized</span> Measures of Complexity for Ellipses.”</span> <em>Electronic Journal of Statistics</em> 14 (2). <a href="https://doi.org/10.1214/20-EJS1739">https://doi.org/10.1214/20-EJS1739</a>.
 </div>
 </div>
 <!--radix_placeholder_article_footer-->
